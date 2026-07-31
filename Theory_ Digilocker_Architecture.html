@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html style="height: 100%; overflow: hidden;"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><title>Theory: Digilocker_Architecture</title><link rel="stylesheet" href="Theory_%20Digilocker_Architecture_files/intdot-style.css"><link rel="stylesheet" href="Theory_%20Digilocker_Architecture_files/tamarin-prover-ui.css"><link rel="stylesheet" href="Theory_%20Digilocker_Architecture_files/jquery-contextmenu.css"><link rel="stylesheet" href="Theory_%20Digilocker_Architecture_files/jquery-ui.css"><script src="Theory_%20Digilocker_Architecture_files/jquery.js"></script><script src="Theory_%20Digilocker_Architecture_files/jquery-ui.js"></script><script src="Theory_%20Digilocker_Architecture_files/jquery-layout.js"></script><script src="Theory_%20Digilocker_Architecture_files/jquery-cookie.js"></script><script src="Theory_%20Digilocker_Architecture_files/jquery-superfish.js"></script><script src="Theory_%20Digilocker_Architecture_files/jquery-contextmenu.js"></script><script src="Theory_%20Digilocker_Architecture_files/tamarin-prover-ui.js"></script><script type="module" src="Theory_%20Digilocker_Architecture_files/intdot-graph.es.js"></script><script type="module" src="Theory_%20Digilocker_Architecture_files/intdot-staticgraph.es.js"></script><script type="module" src="Theory_%20Digilocker_Architecture_files/intdot-dynamicgraph.es.js"></script></head><body class="ui-layout-container" style="position: relative; height: 100%; overflow: hidden; margin: 0px; padding: 0px; border: medium;"><p class="loading" style="display: none;">Loading, please wait...  <a id="cancel" href="#">Cancel</a></p><div class="ui-layout-north ui-layout-pane ui-layout-pane-north" style="position: absolute; margin: 0px; inset: 0px 0px auto; width: auto; z-index: 1; height: 35px; visibility: visible; display: block;"><div class="layout-pane-north"><div id="header-info">Running <a href="http://127.0.0.1:3001/"><span class="tamarin">Tamarin</span></a> 1.12.0</div></div><div id="header-links"><ul id="navigation" class="sf-js-enabled sf-shadow"><li><a href="http://127.0.0.1:3001/">Index</a></li><li><form class="ajax-form ajax-form-full reload-confirm" method="POST" action="/thy/trace/4/reload"><button class="nav-button" type="submit">Reload file</button></form></li><li class=""><a href="#" class="sf-with-ul">Actions<span class="sf-sub-indicator"> »</span></a><ul style="visibility: hidden; display: none;"><li><a target="_blank" href="http://127.0.0.1:3001/thy/trace/4/source">Show source</a></li><li><a href="http://127.0.0.1:3001/thy/trace/4/download/Digilocker_Architecture.spthy">Download source</a></li><li><form class="ajax-form" method="POST" action="/thy/trace/4/get_and_append/Digilocker_Architecture.spthy"><button class="link-button" type="submit">Append modified lemmas to file</button></form></li></ul></li><li><a href="#" class="sf-with-ul">Options<span class="sf-sub-indicator"> »</span></a><ul class="list-with-toggles" style="display: none; visibility: hidden;"><li><a id="abbrv-toggle" href="#" class="active-option">Abbreviate terms</a></li><li><a id="agent-toggle" href="#" class="active-option">Clustering by role</a></li><li><a id="auto-toggle" href="#" class="disabled-option">Show annotation auto-sources</a></li><li><a id="lvl0-toggle" href="#" class="inactive-option">Graph simplification off</a></li><li><a id="lvl1-toggle" href="#" class="inactive-option">Graph simplification L1</a></li><li><a id="lvl2-toggle" href="#" class="inactive-option">Graph simplification L2</a></li><li><a id="lvl3-toggle" href="#" class="active-option">Graph simplification L3</a></li></ul></li></ul></div></div><div class="ui-layout-west ui-layout-pane ui-layout-pane-west" style="position: absolute; margin: 0px; inset: 36px auto 0px 0px; height: 612px; z-index: 1; width: 475px; visibility: visible; display: block;"><h1 class="pane-head">Proof scripts</h1><div class="scroll-wrapper" id="proof-wrapper"><div class="monospace" id="proof"><span class="hl_keyword">theory</span> <a class="internal-link help" href="http://127.0.0.1:3001/thy/trace/4/main/help">Digilocker_Architecture</a> <span class="hl_keyword">begin</span><br>
+<br>
+<a class="internal-link" href="http://127.0.0.1:3001/thy/trace/4/main/message"><strong>Message theory</strong> </a><br>
+<br>
+<a class="internal-link" href="http://127.0.0.1:3001/thy/trace/4/main/rules"><strong>Multiset rewriting rules</strong> (8)</a><br>
+<br>
+<a class="internal-link" href="http://127.0.0.1:3001/thy/trace/4/main/tactic"><strong>Tactic(s)</strong> </a><br>
+<br>
+<a class="internal-link active-link" href="http://127.0.0.1:3001/thy/trace/4/main/cases/raw/0/0"><strong>Raw sources</strong> (14 cases, deconstructions complete)</a><br>
+<br>
+<a class="internal-link" href="http://127.0.0.1:3001/thy/trace/4/main/cases/refined/0/0"><strong>Refined sources </strong> (14 cases, deconstructions complete)</a><br>
+<br>
+<a class="internal-link add" href="http://127.0.0.1:3001/thy/trace/4/main/add/%3Cfirst%3E">add lemma</a><br>
+<br>
+<span class="hl_good"><span class="hl_keyword">lemma</span> executable:<br>
+&nbsp;&nbsp;exists-trace<br>
+&nbsp;&nbsp;"<span class="hl_operator">∃ </span>req doc_id data #i<span class="hl_operator">.</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;RequesterReceivedDoc( req, doc_id, data ) <span class="hl_operator">@</span> #i"<br>
+<a class="internal-link edit" href="http://127.0.0.1:3001/thy/trace/4/main/edit/executable">edit lemma</a>  or  <a class="internal-link delete" href="http://127.0.0.1:3001/thy/trace/4/main/delete/executable">delete lemma</a></span><br>
+<a class="internal-link proof-step hl_good" href="http://127.0.0.1:3001/thy/trace/4/main/proof/executable"><span class="hl_keyword">simplify</span></a><a class="internal-link remove-step" href="http://127.0.0.1:3001/thy/trace/4/main/proof/executable"></a><br>
+<a class="internal-link proof-step hl_good" href="http://127.0.0.1:3001/thy/trace/4/main/proof/executable/_"><span class="hl_keyword">solve(</span> !Pk( $Issuer, pk(~ltkIssuer) ) ▶₁ #i <span class="hl_keyword">)</span></a><a class="internal-link remove-step" href="http://127.0.0.1:3001/thy/trace/4/main/proof/executable/_"></a><br>
+&nbsp;&nbsp;<span class="hl_good"><span class="hl_keyword">case</span> Register_PKI</span><br>
+&nbsp;&nbsp;<a class="internal-link proof-step hl_good" href="http://127.0.0.1:3001/thy/trace/4/main/proof/executable/_/Register_PKI"><span class="hl_keyword">solve(</span> !KU( sign(&lt;'DocData', ~doc_id, ~secret_data&gt;,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~ltkIssuer)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;) <span class="hl_operator">@</span> #vk <span class="hl_keyword">)</span></a><a class="internal-link remove-step" href="http://127.0.0.1:3001/thy/trace/4/main/proof/executable/_/Register_PKI"></a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="hl_good"><span class="hl_keyword">case</span> Issuer_Provides_Document</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="internal-link proof-step hl_good" href="http://127.0.0.1:3001/thy/trace/4/main/proof/executable/_/Register_PKI/Issuer_Provides_Document"><span class="hl_keyword">solve(</span> !KU( ~doc_id ) <span class="hl_operator">@</span> #vk.4 <span class="hl_keyword">)</span></a><a class="internal-link remove-step" href="http://127.0.0.1:3001/thy/trace/4/main/proof/executable/_/Register_PKI/Issuer_Provides_Document"></a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="hl_good"><span class="hl_keyword">case</span> Core_Fetch_Issuer</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="internal-link proof-step hl_good" href="http://127.0.0.1:3001/thy/trace/4/main/proof/executable/_/Register_PKI/Issuer_Provides_Document/Core_Fetch_Issuer"><span class="hl_keyword">SOLVED</span> <span class="hl_comment">// trace found</span></a><a class="internal-link remove-step" href="http://127.0.0.1:3001/thy/trace/4/main/proof/executable/_/Register_PKI/Issuer_Provides_Document/Core_Fetch_Issuer"></a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="hl_good"><span class="hl_keyword">qed</span></span><br>
+&nbsp;&nbsp;<span class="hl_good"><span class="hl_keyword">qed</span></span><br>
+<span class="hl_good"><span class="hl_keyword">qed</span></span><br>
+<br>
+<a class="internal-link add" href="http://127.0.0.1:3001/thy/trace/4/main/add/executable">add lemma</a><br>
+<br>
+<span class="hl_good"><span class="hl_keyword">lemma</span> document_authentication:<br>
+&nbsp;&nbsp;all-traces<br>
+&nbsp;&nbsp;"<span class="hl_operator">∀ </span>req doc_id data #i<span class="hl_operator">.</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="hl_operator">(</span>RequesterReceivedDoc( req, doc_id, data ) <span class="hl_operator">@</span> #i<span class="hl_operator">)</span> <span class="hl_operator">⇒</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="hl_operator">(</span><span class="hl_operator">∃ </span>sig #j<span class="hl_operator">.</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="hl_operator">(</span>DocumentIssued( doc_id, data, sig ) <span class="hl_operator">@</span> #j<span class="hl_operator">)</span> <span class="hl_operator">∧</span> <span class="hl_operator">(</span>#j <span class="hl_operator">&lt;</span> #i<span class="hl_operator">)</span><span class="hl_operator">)</span>"<br>
+<a class="internal-link edit" href="http://127.0.0.1:3001/thy/trace/4/main/edit/document_authentication">edit lemma</a>  or  <a class="internal-link delete" href="http://127.0.0.1:3001/thy/trace/4/main/delete/document_authentication">delete lemma</a></span><br>
+<a class="internal-link proof-step hl_good" href="http://127.0.0.1:3001/thy/trace/4/main/proof/document_authentication"><span class="hl_keyword">simplify</span></a><a class="internal-link remove-step" href="http://127.0.0.1:3001/thy/trace/4/main/proof/document_authentication"></a><br>
+<a class="internal-link proof-step hl_good" href="http://127.0.0.1:3001/thy/trace/4/main/proof/document_authentication/_"><span class="hl_keyword">solve(</span> !Pk( $Issuer, pk(~ltkIssuer) ) ▶₁ #i <span class="hl_keyword">)</span></a><a class="internal-link remove-step" href="http://127.0.0.1:3001/thy/trace/4/main/proof/document_authentication/_"></a><br>
+&nbsp;&nbsp;<span class="hl_good"><span class="hl_keyword">case</span> Register_PKI</span><br>
+&nbsp;&nbsp;<a class="internal-link proof-step hl_good" href="http://127.0.0.1:3001/thy/trace/4/main/proof/document_authentication/_/Register_PKI"><span class="hl_keyword">solve(</span> !KU( sign(&lt;'DocData', ~doc_id, ~secret_data&gt;,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~ltkIssuer)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;) <span class="hl_operator">@</span> #vk <span class="hl_keyword">)</span></a><a class="internal-link remove-step" href="http://127.0.0.1:3001/thy/trace/4/main/proof/document_authentication/_/Register_PKI"></a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="hl_good"><span class="hl_keyword">case</span> Issuer_Provides_Document</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="hl_good"><span class="hl_keyword">by</span> </span><a class="internal-link proof-step hl_good" href="http://127.0.0.1:3001/thy/trace/4/main/proof/document_authentication/_/Register_PKI/Issuer_Provides_Document"><span class="hl_keyword">contradiction</span> <span class="hl_comment">/* from formulas */</span></a><a class="internal-link remove-step" href="http://127.0.0.1:3001/thy/trace/4/main/proof/document_authentication/_/Register_PKI/Issuer_Provides_Document"></a><br>
+&nbsp;&nbsp;<span class="hl_good"><span class="hl_keyword">next</span></span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="hl_good"><span class="hl_keyword">case</span> c_sign</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="hl_good"><span class="hl_keyword">by</span> </span><a class="internal-link proof-step hl_good" href="http://127.0.0.1:3001/thy/trace/4/main/proof/document_authentication/_/Register_PKI/c_sign"><span class="hl_keyword">solve(</span> !KU( ~ltkIssuer ) <span class="hl_operator">@</span> #vk.2 <span class="hl_keyword">)</span></a><a class="internal-link remove-step" href="http://127.0.0.1:3001/thy/trace/4/main/proof/document_authentication/_/Register_PKI/c_sign"></a><br>
+&nbsp;&nbsp;<span class="hl_good"><span class="hl_keyword">qed</span></span><br>
+<span class="hl_good"><span class="hl_keyword">qed</span></span><br>
+<br>
+<a class="internal-link add" href="http://127.0.0.1:3001/thy/trace/4/main/add/document_authentication">add lemma</a><br>
+<br>
+<span class="hl_good"><span class="hl_keyword">lemma</span> document_secrecy:<br>
+&nbsp;&nbsp;all-traces<br>
+&nbsp;&nbsp;"<span class="hl_operator">∀ </span>doc_id data sig #i<span class="hl_operator">.</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="hl_operator">(</span>DocumentIssued( doc_id, data, sig ) <span class="hl_operator">@</span> #i<span class="hl_operator">)</span> <span class="hl_operator">⇒</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="hl_operator">(</span><span class="hl_operator">¬</span><span class="hl_operator">(</span><span class="hl_operator">∃ </span>#j<span class="hl_operator">.</span> K( data ) <span class="hl_operator">@</span> #j<span class="hl_operator">)</span><span class="hl_operator">)</span>"<br>
+<a class="internal-link edit" href="http://127.0.0.1:3001/thy/trace/4/main/edit/document_secrecy">edit lemma</a>  or  <a class="internal-link delete" href="http://127.0.0.1:3001/thy/trace/4/main/delete/document_secrecy">delete lemma</a></span><br>
+<a class="internal-link proof-step hl_good" href="http://127.0.0.1:3001/thy/trace/4/main/proof/document_secrecy"><span class="hl_keyword">simplify</span></a><a class="internal-link remove-step" href="http://127.0.0.1:3001/thy/trace/4/main/proof/document_secrecy"></a><br>
+<a class="internal-link proof-step hl_good" href="http://127.0.0.1:3001/thy/trace/4/main/proof/document_secrecy/_"><span class="hl_keyword">solve(</span> !Ltk( $Issuer, ~ltkIssuer ) ▶₁ #i <span class="hl_keyword">)</span></a><a class="internal-link remove-step" href="http://127.0.0.1:3001/thy/trace/4/main/proof/document_secrecy/_"></a><br>
+&nbsp;&nbsp;<span class="hl_good"><span class="hl_keyword">case</span> Register_PKI</span><br>
+&nbsp;&nbsp;<a class="internal-link proof-step hl_good" href="http://127.0.0.1:3001/thy/trace/4/main/proof/document_secrecy/_/Register_PKI"><span class="hl_keyword">solve(</span> !KU( ~doc_id ) <span class="hl_operator">@</span> #vk.3 <span class="hl_keyword">)</span></a><a class="internal-link remove-step" href="http://127.0.0.1:3001/thy/trace/4/main/proof/document_secrecy/_/Register_PKI"></a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="hl_good"><span class="hl_keyword">case</span> Core_Fetch_Issuer</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="hl_good"><span class="hl_keyword">by</span> </span><a class="internal-link proof-step hl_good" href="http://127.0.0.1:3001/thy/trace/4/main/proof/document_secrecy/_/Register_PKI/Core_Fetch_Issuer"><span class="hl_keyword">solve(</span> !KU( ~secret_data ) <span class="hl_operator">@</span> #vk.5 <span class="hl_keyword">)</span></a><a class="internal-link remove-step" href="http://127.0.0.1:3001/thy/trace/4/main/proof/document_secrecy/_/Register_PKI/Core_Fetch_Issuer"></a><br>
+&nbsp;&nbsp;<span class="hl_good"><span class="hl_keyword">next</span></span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="hl_good"><span class="hl_keyword">case</span> User_Auth_Request</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="hl_good"><span class="hl_keyword">by</span> </span><a class="internal-link proof-step hl_good" href="http://127.0.0.1:3001/thy/trace/4/main/proof/document_secrecy/_/Register_PKI/User_Auth_Request"><span class="hl_keyword">solve(</span> !KU( ~secret_data ) <span class="hl_operator">@</span> #vk.5 <span class="hl_keyword">)</span></a><a class="internal-link remove-step" href="http://127.0.0.1:3001/thy/trace/4/main/proof/document_secrecy/_/Register_PKI/User_Auth_Request"></a><br>
+&nbsp;&nbsp;<span class="hl_good"><span class="hl_keyword">next</span></span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="hl_good"><span class="hl_keyword">case</span> fresh</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="hl_good"><span class="hl_keyword">by</span> </span><a class="internal-link proof-step hl_good" href="http://127.0.0.1:3001/thy/trace/4/main/proof/document_secrecy/_/Register_PKI/fresh"><span class="hl_keyword">solve(</span> !KU( ~secret_data ) <span class="hl_operator">@</span> #vk.5 <span class="hl_keyword">)</span></a><a class="internal-link remove-step" href="http://127.0.0.1:3001/thy/trace/4/main/proof/document_secrecy/_/Register_PKI/fresh"></a><br>
+&nbsp;&nbsp;<span class="hl_good"><span class="hl_keyword">qed</span></span><br>
+<span class="hl_good"><span class="hl_keyword">qed</span></span><br>
+<br>
+<a class="internal-link add" href="http://127.0.0.1:3001/thy/trace/4/main/add/document_secrecy">add lemma</a><br>
+<br>
+<span class="hl_keyword">end</span><br>
+ </div></div></div><div class="ui-layout-east ui-layout-pane ui-layout-pane-east" style="position: absolute; margin: 0px; inset: 36px 0px 0px auto; height: 612px; z-index: 1; width: 200px; visibility: visible; display: none;"><h1 class="pane-head">&nbsp;Debug information</h1><div class="scroll-wrapper" id="debug-wrapper"><div id="ui-debug-display"></div></div></div><div class="ui-layout-center ui-layout-pane ui-layout-pane-center ui-layout-pane-hover ui-layout-pane-center-hover ui-layout-pane-open-hover ui-layout-pane-center-open-hover" style="position: absolute; margin: 0px; inset: 36px 0px 0px 479px; height: 612px; width: 801px; z-index: 1; visibility: visible; display: block;"><h1 class="pane-head" id="main-title">Raw sources</h1><div class="scroll-wrapper" id="main-wrapper" tabindex="0"><div id="ui-main-display"><h2>Sources of "!CoreSession( t.1, t.2, t.3, t.4<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;) ▶₀ #i" (1 cases)</h2><br>
+<h3>Source 1 of 1  / named  "SSO_Consent_Token_Generation" </h3><br>
+<static-graph graphsrc="/thy/trace/4/intdot/cases/raw/1/1"><iframe src="Theory_%20Digilocker_Architecture_files/1.html" width="100%" height="400"></iframe><a href="http://127.0.0.1:3001/thy/trace/4/intdot/cases/raw/1/1" target="_blank">Open Graph in New Tab</a></static-graph><br>
+<p>"!CoreSession( t.1, t.2, t.3, t.4 ) ▶₀ #i"</p><br>
+<p class="monospace cases"><span class="hl_keyword">last</span>: none<br>
+<br>
+<span class="hl_keyword">formulas</span>:<br>
+<br>
+<span class="hl_keyword">subterms</span>:<br>
+<br>
+<span class="hl_keyword">equations</span>:<br>
+&nbsp;&nbsp;<span class="hl_keyword">subst</span>:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;$Requester.6 <span class="hl_operator"> &lt;~ {</span>t.2<span class="hl_operator">}</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;$User.6 <span class="hl_operator"> &lt;~ {</span>t.1<span class="hl_operator">}</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;~doc_id.6 <span class="hl_operator"> &lt;~ {</span>t.3<span class="hl_operator">}</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;sign(&lt;'Consent', $User.6, $Requester.6, ~doc_id.6&gt;,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~ltkSSO.6) <span class="hl_operator"> &lt;~ {</span>t.4<span class="hl_operator">}</span><br>
+&nbsp;&nbsp;<span class="hl_keyword">conj</span>:<br>
+<br>
+<span class="hl_keyword">lemmas</span>:<br>
+<br>
+<span class="hl_keyword">allowed cases</span>: raw<br>
+<br>
+<span class="hl_keyword">solved formulas</span>:<br>
+<br>
+<span class="hl_keyword">unsolved constraints</span>:<br>
+&nbsp;&nbsp;!KU( &lt;&lt;'AuthReq', $User.6, $Requester.6&gt;, <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pkce_challenge.6&gt;<br>
+&nbsp;&nbsp;) <span class="hl_operator">@</span> #vk.8 <span class="hl_comment">// nr: 2" (probably constructible)"</span><br>
+&nbsp;&nbsp;<br>
+&nbsp;&nbsp;!KU( &lt;'AuthReq', $User.6, $Requester.6&gt;<br>
+&nbsp;&nbsp;) <span class="hl_operator">@</span> #vk.9 <span class="hl_comment">// nr: 3" (currently deducible)"</span><br>
+&nbsp;&nbsp;<br>
+&nbsp;&nbsp;!KU( 'AuthReq'<br>
+&nbsp;&nbsp;) <span class="hl_operator">@</span> #vk.10 <span class="hl_comment">// nr: 4" (currently deducible)"</span><br>
+&nbsp;&nbsp;<br>
+&nbsp;&nbsp;!KU( &lt;$User.6, $Requester.6&gt;<br>
+&nbsp;&nbsp;) <span class="hl_operator">@</span> #vk.11 <span class="hl_comment">// nr: 5" (currently deducible)"</span><br>
+&nbsp;&nbsp;<br>
+&nbsp;&nbsp;!KU( $User.6 ) <span class="hl_operator">@</span> #vk.12 <span class="hl_comment">// nr: 6" (currently deducible)"</span><br>
+&nbsp;&nbsp;<br>
+&nbsp;&nbsp;!KU( $Requester.6<br>
+&nbsp;&nbsp;) <span class="hl_operator">@</span> #vk.13 <span class="hl_comment">// nr: 7" (currently deducible)"</span><br>
+&nbsp;&nbsp;<br>
+&nbsp;&nbsp;!KU( pkce_challenge.6<br>
+&nbsp;&nbsp;) <span class="hl_operator">@</span> #vk.14 <span class="hl_comment">// nr: 8" (probably constructible)"</span><br>
+<br>
+<span class="hl_keyword">solved constraints</span>:<br>
+&nbsp;&nbsp;!CoreSession( $User.6, $Requester.6, ~doc_id.6,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sign(&lt;'Consent',
+ $User.6, $Requester.6, ~doc_id.6&gt;,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~ltkSSO.6)<br>
+&nbsp;&nbsp;) ▶₀ #i <span class="hl_comment">// nr: 0" (useful2)"</span><br>
+&nbsp;&nbsp;<br>
+&nbsp;&nbsp;!Ltk( $SSO.6, ~ltkSSO.6<br>
+&nbsp;&nbsp;) ▶₁ #vr.5 <span class="hl_comment">// nr: 9 (from rule SSO_Consent_Token_Generation)" (useful2)"</span></p><br>
+<h2>Sources of "!Ltk( t.1, t.2 ) ▶₀ #i" (1 cases)</h2><br>
+<h3>Source 1 of 1  / named  "Register_PKI" </h3><br>
+<static-graph graphsrc="/thy/trace/4/intdot/cases/raw/2/1"><iframe src="Theory_%20Digilocker_Architecture_files/1_002.html" width="100%" height="400"></iframe><a href="http://127.0.0.1:3001/thy/trace/4/intdot/cases/raw/2/1" target="_blank">Open Graph in New Tab</a></static-graph><br>
+<p>"!Ltk( t.1, t.2 ) ▶₀ #i"</p><br>
+<p class="monospace cases"><span class="hl_keyword">last</span>: none<br>
+<br>
+<span class="hl_keyword">formulas</span>:<br>
+<br>
+<span class="hl_keyword">subterms</span>:<br>
+<br>
+<span class="hl_keyword">equations</span>:<br>
+&nbsp;&nbsp;<span class="hl_keyword">subst</span>:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;$A.4 <span class="hl_operator"> &lt;~ {</span>t.1<span class="hl_operator">}</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;~ltk.4 <span class="hl_operator"> &lt;~ {</span>t.2<span class="hl_operator">}</span><br>
+&nbsp;&nbsp;<span class="hl_keyword">conj</span>:<br>
+<br>
+<span class="hl_keyword">lemmas</span>:<br>
+<br>
+<span class="hl_keyword">allowed cases</span>: raw<br>
+<br>
+<span class="hl_keyword">solved formulas</span>:<br>
+<br>
+<span class="hl_keyword">unsolved constraints</span>:<br>
+<br>
+<span class="hl_keyword">solved constraints</span>:<br>
+&nbsp;&nbsp;!Ltk( $A.4, ~ltk.4 ) ▶₀ #i <span class="hl_comment">// nr: 0" (useful2)"</span></p><br>
+<h2>Sources of "!Pk( t.1, t.2 ) ▶₀ #i" (1 cases)</h2><br>
+<h3>Source 1 of 1  / named  "Register_PKI" </h3><br>
+<static-graph graphsrc="/thy/trace/4/intdot/cases/raw/3/1"><iframe src="Theory_%20Digilocker_Architecture_files/1_003.html" width="100%" height="400"></iframe><a href="http://127.0.0.1:3001/thy/trace/4/intdot/cases/raw/3/1" target="_blank">Open Graph in New Tab</a></static-graph><br>
+<p>"!Pk( t.1, t.2 ) ▶₀ #i"</p><br>
+<p class="monospace cases"><span class="hl_keyword">last</span>: none<br>
+<br>
+<span class="hl_keyword">formulas</span>:<br>
+<br>
+<span class="hl_keyword">subterms</span>:<br>
+<br>
+<span class="hl_keyword">equations</span>:<br>
+&nbsp;&nbsp;<span class="hl_keyword">subst</span>:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;$A.4 <span class="hl_operator"> &lt;~ {</span>t.1<span class="hl_operator">}</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;pk(~ltk.4) <span class="hl_operator"> &lt;~ {</span>t.2<span class="hl_operator">}</span><br>
+&nbsp;&nbsp;<span class="hl_keyword">conj</span>:<br>
+<br>
+<span class="hl_keyword">lemmas</span>:<br>
+<br>
+<span class="hl_keyword">allowed cases</span>: raw<br>
+<br>
+<span class="hl_keyword">solved formulas</span>:<br>
+<br>
+<span class="hl_keyword">unsolved constraints</span>:<br>
+<br>
+<span class="hl_keyword">solved constraints</span>:<br>
+&nbsp;&nbsp;!Pk( $A.4, pk(~ltk.4) ) ▶₀ #i <span class="hl_comment">// nr: 0" (useful2)"</span></p><br>
+<h2>Sources of "!KU( ~t.1 ) <span class="hl_operator">@</span> #i" (3 cases)</h2><br>
+<h3>Source 1 of 3  / named  "User_Auth_Request" </h3><br>
+<static-graph graphsrc="/thy/trace/4/intdot/cases/raw/4/1"><iframe src="Theory_%20Digilocker_Architecture_files/1_004.html" width="100%" height="400"></iframe><a href="http://127.0.0.1:3001/thy/trace/4/intdot/cases/raw/4/1" target="_blank">Open Graph in New Tab</a></static-graph><br>
+<p>"!KU( ~t.1 ) <span class="hl_operator">@</span> #i"</p><br>
+<p class="monospace cases"><span class="hl_keyword">last</span>: none<br>
+<br>
+<span class="hl_keyword">formulas</span>:<br>
+<br>
+<span class="hl_keyword">subterms</span>:<br>
+<br>
+<span class="hl_keyword">equations</span>:<br>
+&nbsp;&nbsp;<span class="hl_keyword">subst</span>:<br>
+&nbsp;&nbsp;<span class="hl_keyword">conj</span>:<br>
+<br>
+<span class="hl_keyword">lemmas</span>:<br>
+<br>
+<span class="hl_keyword">allowed cases</span>: raw<br>
+<br>
+<span class="hl_keyword">solved formulas</span>:<br>
+<br>
+<span class="hl_keyword">unsolved constraints</span>:<br>
+<br>
+<span class="hl_keyword">solved constraints</span>:<br>
+&nbsp;&nbsp;!KU( ~t.1<br>
+&nbsp;&nbsp;) <span class="hl_operator">@</span> #i <span class="hl_comment">// nr: 0 (from rule Coerce)" (currently deducible)"</span><br>
+&nbsp;&nbsp;<br>
+&nbsp;&nbsp;!Ltk( $User.7, ~ltkUser.7<br>
+&nbsp;&nbsp;) ▶₀ #vr.6 <span class="hl_comment">// nr: 4 (from rule User_Auth_Request)" (useful2)"</span></p><br>
+<h3>Source 2 of 3  / named  "Core_Fetch_Issuer" </h3><br>
+<static-graph graphsrc="/thy/trace/4/intdot/cases/raw/4/2"><iframe src="Theory_%20Digilocker_Architecture_files/2.html" width="100%" height="400"></iframe><a href="http://127.0.0.1:3001/thy/trace/4/intdot/cases/raw/4/2" target="_blank">Open Graph in New Tab</a></static-graph><br>
+<p>"!KU( ~t.1 ) <span class="hl_operator">@</span> #i"</p><br>
+<p class="monospace cases"><span class="hl_keyword">last</span>: none<br>
+<br>
+<span class="hl_keyword">formulas</span>:<br>
+<br>
+<span class="hl_keyword">subterms</span>:<br>
+<br>
+<span class="hl_keyword">equations</span>:<br>
+&nbsp;&nbsp;<span class="hl_keyword">subst</span>:<br>
+&nbsp;&nbsp;<span class="hl_keyword">conj</span>:<br>
+<br>
+<span class="hl_keyword">lemmas</span>:<br>
+<br>
+<span class="hl_keyword">allowed cases</span>: raw<br>
+<br>
+<span class="hl_keyword">solved formulas</span>:<br>
+<br>
+<span class="hl_keyword">unsolved constraints</span>:<br>
+&nbsp;&nbsp;!KU( &lt;&lt;'AuthReq', $User.7, $Requester.7&gt;, <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pkce_challenge.15&gt;<br>
+&nbsp;&nbsp;) <span class="hl_operator">@</span> #vk.17 <span class="hl_comment">// nr: 10" (probably constructible)"</span><br>
+&nbsp;&nbsp;<br>
+&nbsp;&nbsp;!KU( &lt;'AuthReq', $User.7, $Requester.7&gt;<br>
+&nbsp;&nbsp;) <span class="hl_operator">@</span> #vk.18 <span class="hl_comment">// nr: 11" (currently deducible)"</span><br>
+&nbsp;&nbsp;<br>
+&nbsp;&nbsp;!KU( 'AuthReq'<br>
+&nbsp;&nbsp;) <span class="hl_operator">@</span> #vk.19 <span class="hl_comment">// nr: 12" (currently deducible)"</span><br>
+&nbsp;&nbsp;<br>
+&nbsp;&nbsp;!KU( &lt;$User.7, $Requester.7&gt;<br>
+&nbsp;&nbsp;) <span class="hl_operator">@</span> #vk.20 <span class="hl_comment">// nr: 13" (currently deducible)"</span><br>
+&nbsp;&nbsp;<br>
+&nbsp;&nbsp;!KU( $User.7 ) <span class="hl_operator">@</span> #vk.21 <span class="hl_comment">// nr: 14" (currently deducible)"</span><br>
+&nbsp;&nbsp;<br>
+&nbsp;&nbsp;!KU( $Requester.7<br>
+&nbsp;&nbsp;) <span class="hl_operator">@</span> #vk.22 <span class="hl_comment">// nr: 15" (currently deducible)"</span><br>
+&nbsp;&nbsp;<br>
+&nbsp;&nbsp;!KU( pkce_challenge.15<br>
+&nbsp;&nbsp;) <span class="hl_operator">@</span> #vk.23 <span class="hl_comment">// nr: 16" (probably constructible)"</span><br>
+<br>
+<span class="hl_keyword">solved constraints</span>:<br>
+&nbsp;&nbsp;!KU( ~t.1<br>
+&nbsp;&nbsp;) <span class="hl_operator">@</span> #i <span class="hl_comment">// nr: 0 (from rule Coerce)" (currently deducible)"</span><br>
+&nbsp;&nbsp;<br>
+&nbsp;&nbsp;!CoreSession( $User.7, $Requester.7, ~t.1,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sign(&lt;'Consent',
+ $User.7, $Requester.7, ~t.1&gt;,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~ltkSSO.15)<br>
+&nbsp;&nbsp;) ▶₀ #vr.6 <span class="hl_comment">// nr: 4 (from rule Core_Fetch_Issuer)" (useful2)"</span><br>
+&nbsp;&nbsp;<br>
+&nbsp;&nbsp;!Ltk( $SSO.15, ~ltkSSO.15<br>
+&nbsp;&nbsp;) ▶₁ #vr.14 <span class="hl_comment">// nr: 17 (from rule SSO_Consent_Token_Generation)" (useful2)"</span></p><br>
+<h3>Source 3 of 3  / named  "fresh" </h3><br>
+<static-graph graphsrc="/thy/trace/4/intdot/cases/raw/4/3"><iframe src="Theory_%20Digilocker_Architecture_files/3.html" width="100%" height="400"></iframe><a href="http://127.0.0.1:3001/thy/trace/4/intdot/cases/raw/4/3" target="_blank">Open Graph in New Tab</a></static-graph><br>
+<p>"!KU( ~t.1 ) <span class="hl_operator">@</span> #i"</p><br>
+<p class="monospace cases"><span class="hl_keyword">last</span>: none<br>
+<br>
+<span class="hl_keyword">formulas</span>:<br>
+<br>
+<span class="hl_keyword">subterms</span>:<br>
+<br>
+<span class="hl_keyword">equations</span>:<br>
+&nbsp;&nbsp;<span class="hl_keyword">subst</span>:<br>
+&nbsp;&nbsp;<span class="hl_keyword">conj</span>:<br>
+<br>
+<span class="hl_keyword">lemmas</span>:<br>
+<br>
+<span class="hl_keyword">allowed cases</span>: raw<br>
+<br>
+<span class="hl_keyword">solved formulas</span>:<br>
+<br>
+<span class="hl_keyword">unsolved constraints</span>:<br>
+<br>
+<span class="hl_keyword">solved constraints</span>:<br>
+&nbsp;&nbsp;!KU( ~t.1<br>
+&nbsp;&nbsp;) <span class="hl_operator">@</span> #i <span class="hl_comment">// nr: 0 (from rule FreshConstr)" (useful2)"</span></p><br>
+<h2>Sources of "!KU( adec(t.1, t.2) ) <span class="hl_operator">@</span> #i" (1 cases)</h2><br>
+<h3>Source 1 of 1  / named  "c_adec" </h3><br>
+<static-graph graphsrc="/thy/trace/4/intdot/cases/raw/5/1"><iframe src="Theory_%20Digilocker_Architecture_files/1_005.html" width="100%" height="400"></iframe><a href="http://127.0.0.1:3001/thy/trace/4/intdot/cases/raw/5/1" target="_blank">Open Graph in New Tab</a></static-graph><br>
+<p>"!KU( adec(t.1, t.2) ) <span class="hl_operator">@</span> #i"</p><br>
+<p class="monospace cases"><span class="hl_keyword">last</span>: none<br>
+<br>
+<span class="hl_keyword">formulas</span>:<br>
+<br>
+<span class="hl_keyword">subterms</span>:<br>
+<br>
+<span class="hl_keyword">equations</span>:<br>
+&nbsp;&nbsp;<span class="hl_keyword">subst</span>:<br>
+&nbsp;&nbsp;<span class="hl_keyword">conj</span>:<br>
+<br>
+<span class="hl_keyword">lemmas</span>:<br>
+<br>
+<span class="hl_keyword">allowed cases</span>: raw<br>
+<br>
+<span class="hl_keyword">solved formulas</span>:<br>
+<br>
+<span class="hl_keyword">unsolved constraints</span>:<br>
+&nbsp;&nbsp;!KU( t.1 ) <span class="hl_operator">@</span> #vk.5 <span class="hl_comment">// nr: 3" (probably constructible)"</span><br>
+&nbsp;&nbsp;<br>
+&nbsp;&nbsp;!KU( t.2 ) <span class="hl_operator">@</span> #vk.6 <span class="hl_comment">// nr: 4" (probably constructible)"</span><br>
+<br>
+<span class="hl_keyword">solved constraints</span>:<br>
+&nbsp;&nbsp;!KU( adec(t.1, t.2)<br>
+&nbsp;&nbsp;) <span class="hl_operator">@</span> #i <span class="hl_comment">// nr: 0 (from rule Constrc_adec)" (probably constructible)"</span></p><br>
+<h2>Sources of "!KU( aenc(t.1, t.2) ) <span class="hl_operator">@</span> #i" (1 cases)</h2><br>
+<h3>Source 1 of 1  / named  "c_aenc" </h3><br>
+<static-graph graphsrc="/thy/trace/4/intdot/cases/raw/6/1"><iframe src="Theory_%20Digilocker_Architecture_files/1_006.html" width="100%" height="400"></iframe><a href="http://127.0.0.1:3001/thy/trace/4/intdot/cases/raw/6/1" target="_blank">Open Graph in New Tab</a></static-graph><br>
+<p>"!KU( aenc(t.1, t.2) ) <span class="hl_operator">@</span> #i"</p><br>
+<p class="monospace cases"><span class="hl_keyword">last</span>: none<br>
+<br>
+<span class="hl_keyword">formulas</span>:<br>
+<br>
+<span class="hl_keyword">subterms</span>:<br>
+<br>
+<span class="hl_keyword">equations</span>:<br>
+&nbsp;&nbsp;<span class="hl_keyword">subst</span>:<br>
+&nbsp;&nbsp;<span class="hl_keyword">conj</span>:<br>
+<br>
+<span class="hl_keyword">lemmas</span>:<br>
+<br>
+<span class="hl_keyword">allowed cases</span>: raw<br>
+<br>
+<span class="hl_keyword">solved formulas</span>:<br>
+<br>
+<span class="hl_keyword">unsolved constraints</span>:<br>
+&nbsp;&nbsp;!KU( t.1 ) <span class="hl_operator">@</span> #vk.5 <span class="hl_comment">// nr: 3" (probably constructible)"</span><br>
+&nbsp;&nbsp;<br>
+&nbsp;&nbsp;!KU( t.2 ) <span class="hl_operator">@</span> #vk.6 <span class="hl_comment">// nr: 4" (probably constructible)"</span><br>
+<br>
+<span class="hl_keyword">solved constraints</span>:<br>
+&nbsp;&nbsp;!KU( aenc(t.1, t.2)<br>
+&nbsp;&nbsp;) <span class="hl_operator">@</span> #i <span class="hl_comment">// nr: 0 (from rule Constrc_aenc)" (probably constructible)"</span></p><br>
+<h2>Sources of "!KU( fst(t.1) ) <span class="hl_operator">@</span> #i" (1 cases)</h2><br>
+<h3>Source 1 of 1  / named  "c_fst" </h3><br>
+<static-graph graphsrc="/thy/trace/4/intdot/cases/raw/7/1"><iframe src="Theory_%20Digilocker_Architecture_files/1_007.html" width="100%" height="400"></iframe><a href="http://127.0.0.1:3001/thy/trace/4/intdot/cases/raw/7/1" target="_blank">Open Graph in New Tab</a></static-graph><br>
+<p>"!KU( fst(t.1) ) <span class="hl_operator">@</span> #i"</p><br>
+<p class="monospace cases"><span class="hl_keyword">last</span>: none<br>
+<br>
+<span class="hl_keyword">formulas</span>:<br>
+<br>
+<span class="hl_keyword">subterms</span>:<br>
+<br>
+<span class="hl_keyword">equations</span>:<br>
+&nbsp;&nbsp;<span class="hl_keyword">subst</span>:<br>
+&nbsp;&nbsp;<span class="hl_keyword">conj</span>:<br>
+<br>
+<span class="hl_keyword">lemmas</span>:<br>
+<br>
+<span class="hl_keyword">allowed cases</span>: raw<br>
+<br>
+<span class="hl_keyword">solved formulas</span>:<br>
+<br>
+<span class="hl_keyword">unsolved constraints</span>:<br>
+&nbsp;&nbsp;!KU( t.1 ) <span class="hl_operator">@</span> #vk.3 <span class="hl_comment">// nr: 2" (probably constructible)"</span><br>
+<br>
+<span class="hl_keyword">solved constraints</span>:<br>
+&nbsp;&nbsp;!KU( fst(t.1)<br>
+&nbsp;&nbsp;) <span class="hl_operator">@</span> #i <span class="hl_comment">// nr: 0 (from rule Constrc_fst)" (probably constructible)"</span></p><br>
+<h2>Sources of "!KU( h(t.1) ) <span class="hl_operator">@</span> #i" (1 cases)</h2><br>
+<h3>Source 1 of 1  / named  "c_h" </h3><br>
+<static-graph graphsrc="/thy/trace/4/intdot/cases/raw/8/1"><iframe src="Theory_%20Digilocker_Architecture_files/1_008.html" width="100%" height="400"></iframe><a href="http://127.0.0.1:3001/thy/trace/4/intdot/cases/raw/8/1" target="_blank">Open Graph in New Tab</a></static-graph><br>
+<p>"!KU( h(t.1) ) <span class="hl_operator">@</span> #i"</p><br>
+<p class="monospace cases"><span class="hl_keyword">last</span>: none<br>
+<br>
+<span class="hl_keyword">formulas</span>:<br>
+<br>
+<span class="hl_keyword">subterms</span>:<br>
+<br>
+<span class="hl_keyword">equations</span>:<br>
+&nbsp;&nbsp;<span class="hl_keyword">subst</span>:<br>
+&nbsp;&nbsp;<span class="hl_keyword">conj</span>:<br>
+<br>
+<span class="hl_keyword">lemmas</span>:<br>
+<br>
+<span class="hl_keyword">allowed cases</span>: raw<br>
+<br>
+<span class="hl_keyword">solved formulas</span>:<br>
+<br>
+<span class="hl_keyword">unsolved constraints</span>:<br>
+&nbsp;&nbsp;!KU( t.1 ) <span class="hl_operator">@</span> #vk.3 <span class="hl_comment">// nr: 2" (probably constructible)"</span><br>
+<br>
+<span class="hl_keyword">solved constraints</span>:<br>
+&nbsp;&nbsp;!KU( h(t.1)<br>
+&nbsp;&nbsp;) <span class="hl_operator">@</span> #i <span class="hl_comment">// nr: 0 (from rule Constrc_h)" (probably constructible)"</span></p><br>
+<h2>Sources of "!KU( pk(t.1) ) <span class="hl_operator">@</span> #i" (2 cases)</h2><br>
+<h3>Source 1 of 2  / named  "c_pk" </h3><br>
+<static-graph graphsrc="/thy/trace/4/intdot/cases/raw/9/1"><iframe src="Theory_%20Digilocker_Architecture_files/1_009.html" width="100%" height="400"></iframe><a href="http://127.0.0.1:3001/thy/trace/4/intdot/cases/raw/9/1" target="_blank">Open Graph in New Tab</a></static-graph><br>
+<p>"!KU( pk(t.1) ) <span class="hl_operator">@</span> #i"</p><br>
+<p class="monospace cases"><span class="hl_keyword">last</span>: none<br>
+<br>
+<span class="hl_keyword">formulas</span>:<br>
+<br>
+<span class="hl_keyword">subterms</span>:<br>
+<br>
+<span class="hl_keyword">equations</span>:<br>
+&nbsp;&nbsp;<span class="hl_keyword">subst</span>:<br>
+&nbsp;&nbsp;<span class="hl_keyword">conj</span>:<br>
+<br>
+<span class="hl_keyword">lemmas</span>:<br>
+<br>
+<span class="hl_keyword">allowed cases</span>: raw<br>
+<br>
+<span class="hl_keyword">solved formulas</span>:<br>
+<br>
+<span class="hl_keyword">unsolved constraints</span>:<br>
+&nbsp;&nbsp;!KU( t.1 ) <span class="hl_operator">@</span> #vk.3 <span class="hl_comment">// nr: 2" (probably constructible)"</span><br>
+<br>
+<span class="hl_keyword">solved constraints</span>:<br>
+&nbsp;&nbsp;!KU( pk(t.1)<br>
+&nbsp;&nbsp;) <span class="hl_operator">@</span> #i <span class="hl_comment">// nr: 0 (from rule Constrc_pk)" (probably constructible)"</span></p><br>
+<h3>Source 2 of 2  / named  "Register_PKI" </h3><br>
+<static-graph graphsrc="/thy/trace/4/intdot/cases/raw/9/2"><iframe src="Theory_%20Digilocker_Architecture_files/2_002.html" width="100%" height="400"></iframe><a href="http://127.0.0.1:3001/thy/trace/4/intdot/cases/raw/9/2" target="_blank">Open Graph in New Tab</a></static-graph><br>
+<p>"!KU( pk(t.1) ) <span class="hl_operator">@</span> #i"</p><br>
+<p class="monospace cases"><span class="hl_keyword">last</span>: none<br>
+<br>
+<span class="hl_keyword">formulas</span>:<br>
+<br>
+<span class="hl_keyword">subterms</span>:<br>
+<br>
+<span class="hl_keyword">equations</span>:<br>
+&nbsp;&nbsp;<span class="hl_keyword">subst</span>: ~ltk.7 <span class="hl_operator"> &lt;~ {</span>t.1<span class="hl_operator">}</span><br>
+&nbsp;&nbsp;<span class="hl_keyword">conj</span>:<br>
+<br>
+<span class="hl_keyword">lemmas</span>:<br>
+<br>
+<span class="hl_keyword">allowed cases</span>: raw<br>
+<br>
+<span class="hl_keyword">solved formulas</span>:<br>
+<br>
+<span class="hl_keyword">unsolved constraints</span>:<br>
+<br>
+<span class="hl_keyword">solved constraints</span>:<br>
+&nbsp;&nbsp;!KU( pk(~ltk.7)<br>
+&nbsp;&nbsp;) <span class="hl_operator">@</span> #i <span class="hl_comment">// nr: 0 (from rule Coerce)" (currently deducible)"</span></p><br>
+<h2>Sources of "!KU( sdec(t.1, t.2) ) <span class="hl_operator">@</span> #i" (1 cases)</h2><br>
+<h3>Source 1 of 1  / named  "c_sdec" </h3><br>
+<static-graph graphsrc="/thy/trace/4/intdot/cases/raw/10/1"><iframe src="Theory_%20Digilocker_Architecture_files/1_010.html" width="100%" height="400"></iframe><a href="http://127.0.0.1:3001/thy/trace/4/intdot/cases/raw/10/1" target="_blank">Open Graph in New Tab</a></static-graph><br>
+<p>"!KU( sdec(t.1, t.2) ) <span class="hl_operator">@</span> #i"</p><br>
+<p class="monospace cases"><span class="hl_keyword">last</span>: none<br>
+<br>
+<span class="hl_keyword">formulas</span>:<br>
+<br>
+<span class="hl_keyword">subterms</span>:<br>
+<br>
+<span class="hl_keyword">equations</span>:<br>
+&nbsp;&nbsp;<span class="hl_keyword">subst</span>:<br>
+&nbsp;&nbsp;<span class="hl_keyword">conj</span>:<br>
+<br>
+<span class="hl_keyword">lemmas</span>:<br>
+<br>
+<span class="hl_keyword">allowed cases</span>: raw<br>
+<br>
+<span class="hl_keyword">solved formulas</span>:<br>
+<br>
+<span class="hl_keyword">unsolved constraints</span>:<br>
+&nbsp;&nbsp;!KU( t.1 ) <span class="hl_operator">@</span> #vk.5 <span class="hl_comment">// nr: 3" (probably constructible)"</span><br>
+&nbsp;&nbsp;<br>
+&nbsp;&nbsp;!KU( t.2 ) <span class="hl_operator">@</span> #vk.6 <span class="hl_comment">// nr: 4" (probably constructible)"</span><br>
+<br>
+<span class="hl_keyword">solved constraints</span>:<br>
+&nbsp;&nbsp;!KU( sdec(t.1, t.2)<br>
+&nbsp;&nbsp;) <span class="hl_operator">@</span> #i <span class="hl_comment">// nr: 0 (from rule Constrc_sdec)" (probably constructible)"</span></p><br>
+<h2>Sources of "!KU( senc(t.1, t.2) ) <span class="hl_operator">@</span> #i" (1 cases)</h2><br>
+<h3>Source 1 of 1  / named  "c_senc" </h3><br>
+<static-graph graphsrc="/thy/trace/4/intdot/cases/raw/11/1"><iframe src="Theory_%20Digilocker_Architecture_files/1_011.html" width="100%" height="400"></iframe><a href="http://127.0.0.1:3001/thy/trace/4/intdot/cases/raw/11/1" target="_blank">Open Graph in New Tab</a></static-graph><br>
+<p>"!KU( senc(t.1, t.2) ) <span class="hl_operator">@</span> #i"</p><br>
+<p class="monospace cases"><span class="hl_keyword">last</span>: none<br>
+<br>
+<span class="hl_keyword">formulas</span>:<br>
+<br>
+<span class="hl_keyword">subterms</span>:<br>
+<br>
+<span class="hl_keyword">equations</span>:<br>
+&nbsp;&nbsp;<span class="hl_keyword">subst</span>:<br>
+&nbsp;&nbsp;<span class="hl_keyword">conj</span>:<br>
+<br>
+<span class="hl_keyword">lemmas</span>:<br>
+<br>
+<span class="hl_keyword">allowed cases</span>: raw<br>
+<br>
+<span class="hl_keyword">solved formulas</span>:<br>
+<br>
+<span class="hl_keyword">unsolved constraints</span>:<br>
+&nbsp;&nbsp;!KU( t.1 ) <span class="hl_operator">@</span> #vk.5 <span class="hl_comment">// nr: 3" (probably constructible)"</span><br>
+&nbsp;&nbsp;<br>
+&nbsp;&nbsp;!KU( t.2 ) <span class="hl_operator">@</span> #vk.6 <span class="hl_comment">// nr: 4" (probably constructible)"</span><br>
+<br>
+<span class="hl_keyword">solved constraints</span>:<br>
+&nbsp;&nbsp;!KU( senc(t.1, t.2)<br>
+&nbsp;&nbsp;) <span class="hl_operator">@</span> #i <span class="hl_comment">// nr: 0 (from rule Constrc_senc)" (probably constructible)"</span></p><br>
+<h2>Sources of "!KU( sign(t.1, t.2) ) <span class="hl_operator">@</span> #i" (4 cases)</h2><br>
+<h3>Source 1 of 4  / named  "c_sign" </h3><br>
+<static-graph graphsrc="/thy/trace/4/intdot/cases/raw/12/1"><iframe src="Theory_%20Digilocker_Architecture_files/1_012.html" width="100%" height="400"></iframe><a href="http://127.0.0.1:3001/thy/trace/4/intdot/cases/raw/12/1" target="_blank">Open Graph in New Tab</a></static-graph><br>
+<p>"!KU( sign(t.1, t.2) ) <span class="hl_operator">@</span> #i"</p><br>
+<p class="monospace cases"><span class="hl_keyword">last</span>: none<br>
+<br>
+<span class="hl_keyword">formulas</span>:<br>
+<br>
+<span class="hl_keyword">subterms</span>:<br>
+<br>
+<span class="hl_keyword">equations</span>:<br>
+&nbsp;&nbsp;<span class="hl_keyword">subst</span>:<br>
+&nbsp;&nbsp;<span class="hl_keyword">conj</span>:<br>
+<br>
+<span class="hl_keyword">lemmas</span>:<br>
+<br>
+<span class="hl_keyword">allowed cases</span>: raw<br>
+<br>
+<span class="hl_keyword">solved formulas</span>:<br>
+<br>
+<span class="hl_keyword">unsolved constraints</span>:<br>
+&nbsp;&nbsp;!KU( t.1 ) <span class="hl_operator">@</span> #vk.5 <span class="hl_comment">// nr: 3" (probably constructible)"</span><br>
+&nbsp;&nbsp;<br>
+&nbsp;&nbsp;!KU( t.2 ) <span class="hl_operator">@</span> #vk.6 <span class="hl_comment">// nr: 4" (probably constructible)"</span><br>
+<br>
+<span class="hl_keyword">solved constraints</span>:<br>
+&nbsp;&nbsp;!KU( sign(t.1, t.2)<br>
+&nbsp;&nbsp;) <span class="hl_operator">@</span> #i <span class="hl_comment">// nr: 0 (from rule Constrc_sign)" (probably constructible)"</span></p><br>
+<h3>Source 2 of 4  / named  "SSO_Consent_Token_Generation" </h3><br>
+<static-graph graphsrc="/thy/trace/4/intdot/cases/raw/12/2"><iframe src="Theory_%20Digilocker_Architecture_files/2_003.html" width="100%" height="400"></iframe><a href="http://127.0.0.1:3001/thy/trace/4/intdot/cases/raw/12/2" target="_blank">Open Graph in New Tab</a></static-graph><br>
+<p>"!KU( sign(t.1, t.2) ) <span class="hl_operator">@</span> #i"</p><br>
+<p class="monospace cases"><span class="hl_keyword">last</span>: none<br>
+<br>
+<span class="hl_keyword">formulas</span>:<br>
+<br>
+<span class="hl_keyword">subterms</span>:<br>
+<br>
+<span class="hl_keyword">equations</span>:<br>
+&nbsp;&nbsp;<span class="hl_keyword">subst</span>:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;~ltkSSO.10 <span class="hl_operator"> &lt;~ {</span>t.2<span class="hl_operator">}</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;'Consent', $User.10, $Requester.10, ~doc_id.10<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt; <span class="hl_operator"> &lt;~ {</span>t.1<span class="hl_operator">}</span><br>
+&nbsp;&nbsp;<span class="hl_keyword">conj</span>:<br>
+<br>
+<span class="hl_keyword">lemmas</span>:<br>
+<br>
+<span class="hl_keyword">allowed cases</span>: raw<br>
+<br>
+<span class="hl_keyword">solved formulas</span>:<br>
+<br>
+<span class="hl_keyword">unsolved constraints</span>:<br>
+&nbsp;&nbsp;!KU( &lt;&lt;'AuthReq', $User.10, $Requester.10&gt;, <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pkce_challenge.10&gt;<br>
+&nbsp;&nbsp;) <span class="hl_operator">@</span> #vk.12 <span class="hl_comment">// nr: 4" (probably constructible)"</span><br>
+&nbsp;&nbsp;<br>
+&nbsp;&nbsp;!KU( &lt;'AuthReq', $User.10, $Requester.10&gt;<br>
+&nbsp;&nbsp;) <span class="hl_operator">@</span> #vk.13 <span class="hl_comment">// nr: 5" (currently deducible)"</span><br>
+&nbsp;&nbsp;<br>
+&nbsp;&nbsp;!KU( 'AuthReq'<br>
+&nbsp;&nbsp;) <span class="hl_operator">@</span> #vk.14 <span class="hl_comment">// nr: 6" (currently deducible)"</span><br>
+&nbsp;&nbsp;<br>
+&nbsp;&nbsp;!KU( &lt;$User.10, $Requester.10&gt;<br>
+&nbsp;&nbsp;) <span class="hl_operator">@</span> #vk.15 <span class="hl_comment">// nr: 7" (currently deducible)"</span><br>
+&nbsp;&nbsp;<br>
+&nbsp;&nbsp;!KU( $User.10 ) <span class="hl_operator">@</span> #vk.16 <span class="hl_comment">// nr: 8" (currently deducible)"</span><br>
+&nbsp;&nbsp;<br>
+&nbsp;&nbsp;!KU( $Requester.10<br>
+&nbsp;&nbsp;) <span class="hl_operator">@</span> #vk.17 <span class="hl_comment">// nr: 9" (currently deducible)"</span><br>
+&nbsp;&nbsp;<br>
+&nbsp;&nbsp;!KU( pkce_challenge.10<br>
+&nbsp;&nbsp;) <span class="hl_operator">@</span> #vk.18 <span class="hl_comment">// nr: 10" (probably constructible)"</span><br>
+<br>
+<span class="hl_keyword">solved constraints</span>:<br>
+&nbsp;&nbsp;!KU( sign(&lt;'Consent', $User.10, $Requester.10, <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~doc_id.10&gt;,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~ltkSSO.10)<br>
+&nbsp;&nbsp;) <span class="hl_operator">@</span> #i <span class="hl_comment">// nr: 0 (from rule Coerce)" (currently deducible)"</span><br>
+&nbsp;&nbsp;<br>
+&nbsp;&nbsp;!Ltk( $SSO.10, ~ltkSSO.10<br>
+&nbsp;&nbsp;) ▶₁ #vr.9 <span class="hl_comment">// nr: 11 (from rule SSO_Consent_Token_Generation)" (useful2)"</span></p><br>
+<h3>Source 3 of 4  / named  "Core_Fetch_Issuer" </h3><br>
+<static-graph graphsrc="/thy/trace/4/intdot/cases/raw/12/3"><iframe src="Theory_%20Digilocker_Architecture_files/3_002.html" width="100%" height="400"></iframe><a href="http://127.0.0.1:3001/thy/trace/4/intdot/cases/raw/12/3" target="_blank">Open Graph in New Tab</a></static-graph><br>
+<p>"!KU( sign(t.1, t.2) ) <span class="hl_operator">@</span> #i"</p><br>
+<p class="monospace cases"><span class="hl_keyword">last</span>: none<br>
+<br>
+<span class="hl_keyword">formulas</span>:<br>
+<br>
+<span class="hl_keyword">subterms</span>:<br>
+<br>
+<span class="hl_keyword">equations</span>:<br>
+&nbsp;&nbsp;<span class="hl_keyword">subst</span>:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;~ltkSSO.18 <span class="hl_operator"> &lt;~ {</span>t.2<span class="hl_operator">}</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;'Consent', $User.10, $Requester.10, ~doc_id.10<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt; <span class="hl_operator"> &lt;~ {</span>t.1<span class="hl_operator">}</span><br>
+&nbsp;&nbsp;<span class="hl_keyword">conj</span>:<br>
+<br>
+<span class="hl_keyword">lemmas</span>:<br>
+<br>
+<span class="hl_keyword">allowed cases</span>: raw<br>
+<br>
+<span class="hl_keyword">solved formulas</span>:<br>
+<br>
+<span class="hl_keyword">unsolved constraints</span>:<br>
+&nbsp;&nbsp;!KU( &lt;&lt;'AuthReq', $User.10, $Requester.10&gt;, <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pkce_challenge.18&gt;<br>
+&nbsp;&nbsp;) <span class="hl_operator">@</span> #vk.20 <span class="hl_comment">// nr: 10" (probably constructible)"</span><br>
+&nbsp;&nbsp;<br>
+&nbsp;&nbsp;!KU( &lt;'AuthReq', $User.10, $Requester.10&gt;<br>
+&nbsp;&nbsp;) <span class="hl_operator">@</span> #vk.21 <span class="hl_comment">// nr: 11" (currently deducible)"</span><br>
+&nbsp;&nbsp;<br>
+&nbsp;&nbsp;!KU( 'AuthReq'<br>
+&nbsp;&nbsp;) <span class="hl_operator">@</span> #vk.22 <span class="hl_comment">// nr: 12" (currently deducible)"</span><br>
+&nbsp;&nbsp;<br>
+&nbsp;&nbsp;!KU( &lt;$User.10, $Requester.10&gt;<br>
+&nbsp;&nbsp;) <span class="hl_operator">@</span> #vk.23 <span class="hl_comment">// nr: 13" (currently deducible)"</span><br>
+&nbsp;&nbsp;<br>
+&nbsp;&nbsp;!KU( $User.10<br>
+&nbsp;&nbsp;) <span class="hl_operator">@</span> #vk.24 <span class="hl_comment">// nr: 14" (currently deducible)"</span><br>
+&nbsp;&nbsp;<br>
+&nbsp;&nbsp;!KU( $Requester.10<br>
+&nbsp;&nbsp;) <span class="hl_operator">@</span> #vk.25 <span class="hl_comment">// nr: 15" (currently deducible)"</span><br>
+&nbsp;&nbsp;<br>
+&nbsp;&nbsp;!KU( pkce_challenge.18<br>
+&nbsp;&nbsp;) <span class="hl_operator">@</span> #vk.26 <span class="hl_comment">// nr: 16" (probably constructible)"</span><br>
+<br>
+<span class="hl_keyword">solved constraints</span>:<br>
+&nbsp;&nbsp;!KU( sign(&lt;'Consent', $User.10, $Requester.10, <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~doc_id.10&gt;,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~ltkSSO.18)<br>
+&nbsp;&nbsp;) <span class="hl_operator">@</span> #i <span class="hl_comment">// nr: 0 (from rule Coerce)" (currently deducible)"</span><br>
+&nbsp;&nbsp;<br>
+&nbsp;&nbsp;!CoreSession( $User.10, $Requester.10, ~doc_id.10,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sign(&lt;'Consent',
+ $User.10, $Requester.10, ~doc_id.10<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~ltkSSO.18)<br>
+&nbsp;&nbsp;) ▶₀ #vr.9 <span class="hl_comment">// nr: 4 (from rule Core_Fetch_Issuer)" (useful2)"</span><br>
+&nbsp;&nbsp;<br>
+&nbsp;&nbsp;!Ltk( $SSO.18, ~ltkSSO.18<br>
+&nbsp;&nbsp;) ▶₁ #vr.17 <span class="hl_comment">// nr: 17 (from rule SSO_Consent_Token_Generation)" (useful2)"</span></p><br>
+<h3>Source 4 of 4  / named  "Issuer_Provides_Document" </h3><br>
+<static-graph graphsrc="/thy/trace/4/intdot/cases/raw/12/4"><iframe src="Theory_%20Digilocker_Architecture_files/4.html" width="100%" height="400"></iframe><a href="http://127.0.0.1:3001/thy/trace/4/intdot/cases/raw/12/4" target="_blank">Open Graph in New Tab</a></static-graph><br>
+<p>"!KU( sign(t.1, t.2) ) <span class="hl_operator">@</span> #i"</p><br>
+<p class="monospace cases"><span class="hl_keyword">last</span>: none<br>
+<br>
+<span class="hl_keyword">formulas</span>:<br>
+<br>
+<span class="hl_keyword">subterms</span>:<br>
+<br>
+<span class="hl_keyword">equations</span>:<br>
+&nbsp;&nbsp;<span class="hl_keyword">subst</span>:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;~ltkIssuer.10 <span class="hl_operator"> &lt;~ {</span>t.2<span class="hl_operator">}</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;'DocData', ~doc_id.10, ~secret_data.10&gt; <span class="hl_operator"> &lt;~ {</span>t.1<span class="hl_operator">}</span><br>
+&nbsp;&nbsp;<span class="hl_keyword">conj</span>:<br>
+<br>
+<span class="hl_keyword">lemmas</span>:<br>
+<br>
+<span class="hl_keyword">allowed cases</span>: raw<br>
+<br>
+<span class="hl_keyword">solved formulas</span>:<br>
+<br>
+<span class="hl_keyword">unsolved constraints</span>:<br>
+&nbsp;&nbsp;!KU( &lt;'FetchDocRequest', ~doc_id.10, jwt_token.10&gt;<br>
+&nbsp;&nbsp;) <span class="hl_operator">@</span> #vk.12 <span class="hl_comment">// nr: 4" (useful2)"</span><br>
+&nbsp;&nbsp;<br>
+&nbsp;&nbsp;!KU( 'FetchDocRequest'<br>
+&nbsp;&nbsp;) <span class="hl_operator">@</span> #vk.13 <span class="hl_comment">// nr: 5" (currently deducible)"</span><br>
+&nbsp;&nbsp;<br>
+&nbsp;&nbsp;!KU( &lt;~doc_id.10, jwt_token.10&gt;<br>
+&nbsp;&nbsp;) <span class="hl_operator">@</span> #vk.14 <span class="hl_comment">// nr: 6" (useful2)"</span><br>
+&nbsp;&nbsp;<br>
+&nbsp;&nbsp;!KU( ~doc_id.10 ) <span class="hl_operator">@</span> #vk.15 <span class="hl_comment">// nr: 7" (useful2)"</span><br>
+&nbsp;&nbsp;<br>
+&nbsp;&nbsp;!KU( jwt_token.10<br>
+&nbsp;&nbsp;) <span class="hl_operator">@</span> #vk.16 <span class="hl_comment">// nr: 8" (probably constructible)"</span><br>
+<br>
+<span class="hl_keyword">solved constraints</span>:<br>
+&nbsp;&nbsp;!KU( sign(&lt;'DocData', ~doc_id.10, ~secret_data.10&gt;,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~ltkIssuer.10)<br>
+&nbsp;&nbsp;) <span class="hl_operator">@</span> #i <span class="hl_comment">// nr: 0 (from rule Coerce)" (currently deducible)"</span><br>
+&nbsp;&nbsp;<br>
+&nbsp;&nbsp;!Ltk( $Issuer.10, ~ltkIssuer.10<br>
+&nbsp;&nbsp;) ▶₁ #vr.9 <span class="hl_comment">// nr: 9 (from rule Issuer_Provides_Document)" (useful2)"</span></p><br>
+<h2>Sources of "!KU( snd(t.1) ) <span class="hl_operator">@</span> #i" (1 cases)</h2><br>
+<h3>Source 1 of 1  / named  "c_snd" </h3><br>
+<static-graph graphsrc="/thy/trace/4/intdot/cases/raw/13/1"><iframe src="Theory_%20Digilocker_Architecture_files/1_013.html" width="100%" height="400"></iframe><a href="http://127.0.0.1:3001/thy/trace/4/intdot/cases/raw/13/1" target="_blank">Open Graph in New Tab</a></static-graph><br>
+<p>"!KU( snd(t.1) ) <span class="hl_operator">@</span> #i"</p><br>
+<p class="monospace cases"><span class="hl_keyword">last</span>: none<br>
+<br>
+<span class="hl_keyword">formulas</span>:<br>
+<br>
+<span class="hl_keyword">subterms</span>:<br>
+<br>
+<span class="hl_keyword">equations</span>:<br>
+&nbsp;&nbsp;<span class="hl_keyword">subst</span>:<br>
+&nbsp;&nbsp;<span class="hl_keyword">conj</span>:<br>
+<br>
+<span class="hl_keyword">lemmas</span>:<br>
+<br>
+<span class="hl_keyword">allowed cases</span>: raw<br>
+<br>
+<span class="hl_keyword">solved formulas</span>:<br>
+<br>
+<span class="hl_keyword">unsolved constraints</span>:<br>
+&nbsp;&nbsp;!KU( t.1 ) <span class="hl_operator">@</span> #vk.3 <span class="hl_comment">// nr: 2" (probably constructible)"</span><br>
+<br>
+<span class="hl_keyword">solved constraints</span>:<br>
+&nbsp;&nbsp;!KU( snd(t.1)<br>
+&nbsp;&nbsp;) <span class="hl_operator">@</span> #i <span class="hl_comment">// nr: 0 (from rule Constrc_snd)" (probably constructible)"</span></p><br>
+<h2>Sources of "!KU( verify(t.1, t.2, t.3) ) <span class="hl_operator">@</span> #i" (1 cases)</h2><br>
+<h3>Source 1 of 1  / named  "c_verify" </h3><br>
+<static-graph graphsrc="/thy/trace/4/intdot/cases/raw/14/1"><iframe src="Theory_%20Digilocker_Architecture_files/1_014.html" width="100%" height="400"></iframe><a href="http://127.0.0.1:3001/thy/trace/4/intdot/cases/raw/14/1" target="_blank">Open Graph in New Tab</a></static-graph><br>
+<p>"!KU( verify(t.1, t.2, t.3) ) <span class="hl_operator">@</span> #i"</p><br>
+<p class="monospace cases"><span class="hl_keyword">last</span>: none<br>
+<br>
+<span class="hl_keyword">formulas</span>:<br>
+<br>
+<span class="hl_keyword">subterms</span>:<br>
+<br>
+<span class="hl_keyword">equations</span>:<br>
+&nbsp;&nbsp;<span class="hl_keyword">subst</span>:<br>
+&nbsp;&nbsp;<span class="hl_keyword">conj</span>:<br>
+<br>
+<span class="hl_keyword">lemmas</span>:<br>
+<br>
+<span class="hl_keyword">allowed cases</span>: raw<br>
+<br>
+<span class="hl_keyword">solved formulas</span>:<br>
+<br>
+<span class="hl_keyword">unsolved constraints</span>:<br>
+&nbsp;&nbsp;!KU( t.1 ) <span class="hl_operator">@</span> #vk.7 <span class="hl_comment">// nr: 4" (probably constructible)"</span><br>
+&nbsp;&nbsp;<br>
+&nbsp;&nbsp;!KU( t.2 ) <span class="hl_operator">@</span> #vk.8 <span class="hl_comment">// nr: 5" (probably constructible)"</span><br>
+&nbsp;&nbsp;<br>
+&nbsp;&nbsp;!KU( t.3 ) <span class="hl_operator">@</span> #vk.9 <span class="hl_comment">// nr: 6" (probably constructible)"</span><br>
+<br>
+<span class="hl_keyword">solved constraints</span>:<br>
+&nbsp;&nbsp;!KU( verify(t.1, t.2, t.3)<br>
+&nbsp;&nbsp;) <span class="hl_operator">@</span> #i <span class="hl_comment">// nr: 0 (from rule Constrc_verify)" (probably constructible)"</span></p><br>
+</div></div></div><ul id="contextMenu"><li class="autoprove"><a href="#autoprove">Autoprove</a></li></ul><div id="" style="position: absolute; padding: 0px; margin: 0px; font-size: 1px; text-align: left; overflow: hidden; z-index: 2; cursor: n-resize; top: 36px; display: none; visibility: visible;" class="ui-layout-resizer ui-layout-resizer-north ui-layout-resizer-open ui-layout-resizer-north-open" title="Resize" aria-disabled="false"><div id="" style="position: absolute; display: block; padding: 0px; margin: 0px; overflow: hidden; text-align: center; font-size: 1px; cursor: pointer; z-index: 1; visibility: visible;" class="ui-layout-toggler ui-layout-toggler-north ui-layout-toggler-open ui-layout-toggler-north-open" title="Close"></div></div><div id="" style="position: absolute; padding: 0px; margin: 0px; font-size: 1px; text-align: left; overflow: hidden; z-index: 2; cursor: w-resize; left: 475px; height: 612px; width: 4px; top: 36px;" class="ui-layout-resizer ui-layout-resizer-west ui-layout-resizer-open ui-layout-resizer-west-open" title="Resize" aria-disabled="false"><div id="" style="position: absolute; display: block; padding: 0px; margin: 0px; overflow: hidden; text-align: center; font-size: 1px; cursor: pointer; z-index: 1; visibility: visible; height: 50px; width: 4px; top: 281px; left: 0px;" class="ui-layout-toggler ui-layout-toggler-west ui-layout-toggler-open ui-layout-toggler-west-open" title="Close"></div></div><div title="Slide Open" style="cursor: pointer; position: absolute; padding: 0px; margin: 0px; font-size: 1px; text-align: left; overflow: hidden; z-index: 2; right: 0px; display: none;" id="" class="ui-layout-resizer ui-layout-resizer-east ui-layout-resizer-closed ui-layout-resizer-east-closed ui-draggable-disabled" aria-disabled="true"><div id="" style="position: absolute; display: block; padding: 0px; margin: 0px; overflow: hidden; text-align: center; font-size: 1px; cursor: pointer; z-index: 1; visibility: visible;" class="ui-layout-toggler ui-layout-toggler-east ui-layout-toggler-closed ui-layout-toggler-east-closed" title="Open"></div></div><div style="display: none; z-index: 1000; outline: 0px; position: absolute;" class="ui-dialog ui-widget ui-widget-content ui-corner-all  ui-draggable ui-resizable" tabindex="-1" role="dialog" aria-labelledby="ui-dialog-title-dialog"><div class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix"><span class="ui-dialog-title" id="ui-dialog-title-dialog">Message</span><a href="#" class="ui-dialog-titlebar-close ui-corner-all" role="button"><span class="ui-icon ui-icon-closethick">close</span></a></div><div id="dialog" style="display: block;" class="ui-dialog-content ui-widget-content"></div><div class="ui-resizable-handle ui-resizable-n"></div><div class="ui-resizable-handle ui-resizable-e"></div><div class="ui-resizable-handle ui-resizable-s"></div><div class="ui-resizable-handle ui-resizable-w"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se ui-icon-grip-diagonal-se" style="z-index: 1001;"></div><div class="ui-resizable-handle ui-resizable-sw" style="z-index: 1002;"></div><div class="ui-resizable-handle ui-resizable-ne" style="z-index: 1003;"></div><div class="ui-resizable-handle ui-resizable-nw" style="z-index: 1004;"></div><div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix"><div class="ui-dialog-buttonset"><button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button" aria-disabled="false"><span class="ui-button-text">Ok</span></button></div></div></div><div style="display: none; z-index: 1000; outline: 0px; position: absolute;" class="ui-dialog ui-widget ui-widget-content ui-corner-all  ui-draggable ui-resizable" tabindex="-1" role="dialog" aria-labelledby="ui-dialog-title-confirm-dialog"><div class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix"><span class="ui-dialog-title" id="ui-dialog-title-confirm-dialog">Confirm Action</span><a href="#" class="ui-dialog-titlebar-close ui-corner-all" role="button"><span class="ui-icon ui-icon-closethick">close</span></a></div><div id="confirm-dialog" class="ui-dialog-content ui-widget-content"></div><div class="ui-resizable-handle ui-resizable-n"></div><div class="ui-resizable-handle ui-resizable-e"></div><div class="ui-resizable-handle ui-resizable-s"></div><div class="ui-resizable-handle ui-resizable-w"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se ui-icon-grip-diagonal-se" style="z-index: 1001;"></div><div class="ui-resizable-handle ui-resizable-sw" style="z-index: 1002;"></div><div class="ui-resizable-handle ui-resizable-ne" style="z-index: 1003;"></div><div class="ui-resizable-handle ui-resizable-nw" style="z-index: 1004;"></div><div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix"><div class="ui-dialog-buttonset"><button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button" aria-disabled="false"><span class="ui-button-text">OK</span></button><button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button" aria-disabled="false"><span class="ui-button-text">Cancel</span></button></div></div></div></body></html>
