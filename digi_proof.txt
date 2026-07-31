@@ -1,0 +1,181 @@
+theory Digilocker_Architecture
+
+begin
+
+// Function signature and definition of the equational theory E
+
+functions: adec/2, aenc/2, fst/1, h/1, pair/2, pk/1, sdec/2, senc/2,
+           sign/2, snd/1, true/0, verify/3
+equations:
+    adec(aenc(x.1, pk(x.2)), x.2) = x.1,
+    fst(<x.1, x.2>) = x.1,
+    sdec(senc(x.1, x.2), x.2) = x.1,
+    snd(<x.1, x.2>) = x.2,
+    verify(sign(x.1, x.2), x.1, pk(x.2)) = true
+
+rule (modulo E) Register_PKI:
+   [ Fr( ~ltk ) ]
+  --[ KeyRegistered( $A ) ]->
+   [ !Ltk( $A, ~ltk ), !Pk( $A, pk(~ltk) ), Out( pk(~ltk) ) ]
+
+  /* has exactly the trivial AC variant */
+
+rule (modulo E) User_Auth_Request:
+   [ !Ltk( $User, ~ltkUser ), Fr( ~pkce_challenge ) ]
+  --[ UserInitiatesAuth( $User, $Requester, ~pkce_challenge ) ]->
+   [ Out( <<'AuthReq', $User, $Requester>, ~pkce_challenge> ) ]
+
+  /* has exactly the trivial AC variant */
+
+rule (modulo E) SSO_Consent_Token_Generation:
+   [
+   In( <<'AuthReq', $User, $Requester>, pkce_challenge> ),
+   !Ltk( $SSO, ~ltkSSO ), Fr( ~doc_id )
+   ]
+  --[ ConsentTokenIssued( $User, $Requester, ~doc_id ) ]->
+   [
+   Out( sign(<'Consent', $User, $Requester, ~doc_id>, ~ltkSSO) ),
+   !CoreSession( $User, $Requester, ~doc_id,
+                 sign(<'Consent', $User, $Requester, ~doc_id>, ~ltkSSO)
+   )
+   ]
+
+  /* has exactly the trivial AC variant */
+
+rule (modulo E) Core_Fetch_Issuer:
+   [ !CoreSession( $User, $Requester, ~doc_id, jwt_token ) ]
+  --[ FetchInitiated( ~doc_id ) ]->
+   [ Out( <'FetchDocRequest', ~doc_id, jwt_token> ) ]
+
+  /* has exactly the trivial AC variant */
+
+rule (modulo E) Issuer_Provides_Document:
+   [
+   In( <'FetchDocRequest', ~doc_id, jwt_token> ),
+   !Ltk( $Issuer, ~ltkIssuer ), Fr( ~secret_data )
+   ]
+  --[
+  DocumentIssued( ~doc_id, ~secret_data,
+                  sign(<'DocData', ~doc_id, ~secret_data>, ~ltkIssuer)
+  )
+  ]->
+   [ Out( sign(<'DocData', ~doc_id, ~secret_data>, ~ltkIssuer) ) ]
+
+  /* has exactly the trivial AC variant */
+
+rule (modulo E) Requester_Receives_Document:
+   [
+   In( sign(<'DocData', ~doc_id, ~secret_data>, ~ltkIssuer) ),
+   !Pk( $Issuer, pk(~ltkIssuer) )
+   ]
+  --[ RequesterReceivedDoc( $Requester, ~doc_id, ~secret_data ) ]->
+   [ ]
+
+  /* has exactly the trivial AC variant */
+
+lemma executable:
+  exists-trace
+  "∃ req doc_id data #i. RequesterReceivedDoc( req, doc_id, data ) @ #i"
+/*
+guarded formula characterizing all satisfying traces:
+"∃ req doc_id data #i. (RequesterReceivedDoc( req, doc_id, data ) @ #i)"
+*/
+simplify
+solve( !Pk( $Issuer, pk(~ltkIssuer) ) ▶₁ #i )
+  case Register_PKI
+  solve( !KU( sign(<'DocData', ~doc_id, ~secret_data>, ~ltkIssuer)
+         ) @ #vk )
+    case Issuer_Provides_Document
+    solve( !KU( ~doc_id ) @ #vk.4 )
+      case Core_Fetch_Issuer
+      SOLVED // trace found
+    qed
+  qed
+qed
+
+lemma document_authentication:
+  all-traces
+  "∀ req doc_id data #i.
+    (RequesterReceivedDoc( req, doc_id, data ) @ #i) ⇒
+    (∃ sig #j. (DocumentIssued( doc_id, data, sig ) @ #j) ∧ (#j < #i))"
+/*
+guarded formula characterizing all counter-examples:
+"∃ req doc_id data #i.
+  (RequesterReceivedDoc( req, doc_id, data ) @ #i)
+ ∧
+  ∀ sig #j. (DocumentIssued( doc_id, data, sig ) @ #j) ⇒ ¬(#j < #i)"
+*/
+simplify
+solve( !Pk( $Issuer, pk(~ltkIssuer) ) ▶₁ #i )
+  case Register_PKI
+  solve( !KU( sign(<'DocData', ~doc_id, ~secret_data>, ~ltkIssuer)
+         ) @ #vk )
+    case Issuer_Provides_Document
+    by contradiction /* from formulas */
+  next
+    case c_sign
+    by solve( !KU( ~ltkIssuer ) @ #vk.2 )
+  qed
+qed
+
+lemma document_secrecy:
+  all-traces
+  "∀ doc_id data sig #i.
+    (DocumentIssued( doc_id, data, sig ) @ #i) ⇒ (¬(∃ #j. K( data ) @ #j))"
+/*
+guarded formula characterizing all counter-examples:
+"∃ doc_id data sig #i.
+  (DocumentIssued( doc_id, data, sig ) @ #i) ∧ ∃ #j. (K( data ) @ #j)"
+*/
+simplify
+solve( !Ltk( $Issuer, ~ltkIssuer ) ▶₁ #i )
+  case Register_PKI
+  solve( !KU( ~doc_id ) @ #vk.3 )
+    case Core_Fetch_Issuer
+    by solve( !KU( ~secret_data ) @ #vk.5 )
+  next
+    case User_Auth_Request
+    by solve( !KU( ~secret_data ) @ #vk.5 )
+  next
+    case fresh
+    by solve( !KU( ~secret_data ) @ #vk.5 )
+  qed
+qed
+
+/*
+WARNING: the following wellformedness checks failed!
+
+Message Derivation Checks
+=========================
+
+  The variables of the following rule(s) are not derivable from their premises, you may be performing unintended pattern matching.
+
+Rule Requester_Receives_Document: 
+Failed to derive Variable(s): ~doc_id, ~ltkIssuer, ~secret_data
+*/
+
+/*
+Generated from:
+Tamarin version 1.12.0
+Maude version 3.5.1
+Git revision: 82780bbaf3328a45f624ddb41e51bf75425f851c (with uncommited changes), branch: master
+Compiled at: 2026-03-07 14:22:39.174278293 UTC
+*/
+
+end
+
+==============================================================================
+summary of summaries:
+
+analyzed: digi.spthy
+
+  processing time: 0.58s
+  
+  WARNING: 1 wellformedness check failed!
+           The analysis results might be wrong!
+  
+  executable (exists-trace): verified (5 steps)
+  document_authentication (all-traces): verified (5 steps)
+  document_secrecy (all-traces): verified (6 steps)
+
+==============================================================================
