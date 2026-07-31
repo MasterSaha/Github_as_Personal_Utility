@@ -1,0 +1,111 @@
+theory Digilocker_Architecture
+begin
+
+/* 
+ * Built-in cryptographic primitives necessary for the DigiLocker TM
+ */
+builtins: hashing, signing, symmetric-encryption, asymmetric-encryption
+
+/* =======================================================================
+ * 1. Setup Phase: Public Key Infrastructure (PKI)
+ * Represents the baseline trust between entities in Digilocker TM.jpg
+ * ======================================================================= */
+rule Register_PKI:
+    [ Fr(~ltk) ]
+  --[ KeyRegistered($A) ]->
+    [ !Ltk($A, ~ltk), !Pk($A, pk(~ltk)), Out(pk(~ltk)) ]
+
+/* =======================================================================
+ * 2. Step 1 & 2: Verification Request & OAuth2.0 Auth Request
+ * Requester initiates; Citizen/User sends auth request to API Setu Gateway.
+ * (Abstracting PKCE challenge as a fresh nonce for simplification)
+ * ======================================================================= */
+rule User_Auth_Request:
+    let
+        auth_req = <'AuthReq', $User, $Requester>
+    in
+    [ !Ltk($User, ~ltkUser), Fr(~pkce_challenge) ]
+  --[ UserInitiatesAuth($User, $Requester, ~pkce_challenge) ]->
+    [ Out(<auth_req, ~pkce_challenge>) ]
+
+/* =======================================================================
+ * 3. Step 3 & 4: Consent Capture & Validated Auth Token (SSO -> Core)
+ * API Setu captures consent; SSO signs a JWT token proving consent.
+ * ======================================================================= */
+rule SSO_Consent_Token_Generation:
+    let
+        auth_req = <'AuthReq', $User, $Requester>
+        // JWT Claims representing the consent artifact
+        jwt_claims = <'Consent', $User, $Requester, ~doc_id>
+        // SSO signs the token (representing PKI Consent/XML-DSig)
+        jwt_token = sign(jwt_claims, ~ltkSSO) 
+    in
+    [ In(<auth_req, pkce_challenge>), !Ltk($SSO, ~ltkSSO), Fr(~doc_id) ]
+  --[ ConsentTokenIssued($User, $Requester, ~doc_id) ]->
+    [ Out(jwt_token), !CoreSession($User, $Requester, ~doc_id, jwt_token) ]
+
+/* =======================================================================
+ * 4. Step 5 & 5a: Core Services resolve URI & FetchDoc from Issuer
+ * Gateway translates the token into a FetchDoc request to the Issuer.
+ * ======================================================================= */
+rule Core_Fetch_Issuer:
+    [ !CoreSession($User, $Requester, ~doc_id, jwt_token) ]
+  --[ FetchInitiated(~doc_id) ]->
+    // In reality, this goes over mutually authenticated TLS. 
+    // Modeled as a public network fetch for Dolev-Yao threat modeling.
+    [ Out(<'FetchDocRequest', ~doc_id, jwt_token>) ]
+
+/* =======================================================================
+ * 5. Step 9: Verified Document Response
+ * Issuer provides the signed document (Signed PDF/XML payload).
+ * ======================================================================= */
+rule Issuer_Provides_Document:
+    let
+        // The actual secret data inside the document
+        doc_payload = <'DocData', ~doc_id, ~secret_data>
+        // Issuer signs the document payload
+        signed_doc = sign(doc_payload, ~ltkIssuer)
+    in
+    [ In(<'FetchDocRequest', ~doc_id, jwt_token>), !Ltk($Issuer, ~ltkIssuer), Fr(~secret_data) ]
+  --[ DocumentIssued(~doc_id, ~secret_data, signed_doc) ]->
+    [ Out(signed_doc) ]
+
+/* =======================================================================
+ * 6. Requester Receives Document
+ * The Requester app receives and validates the Issuer's signature.
+ * ======================================================================= */
+rule Requester_Receives_Document:
+    let
+        doc_payload = <'DocData', ~doc_id, ~secret_data>
+    in
+    [ In(sign(doc_payload, ~ltkIssuer)), !Pk($Issuer, pk(~ltkIssuer)) ]
+  --[ RequesterReceivedDoc($Requester, ~doc_id, ~secret_data) ]->
+    [ ]
+
+/* =======================================================================
+ * LEMMAS (Threat Modeling Security Goals)
+ * ======================================================================= */
+
+// 1. Executability: Can the protocol run from start to finish?
+lemma executable:
+    exists-trace
+    "Ex req doc_id data #i. RequesterReceivedDoc(req, doc_id, data) @ i"
+
+// 2. Authentication / Integrity: If the Requester receives a document, 
+// did it genuinely come from the Issuer? (Protects against spoofing)
+lemma document_authentication:
+    "All req doc_id data #i. 
+        RequesterReceivedDoc(req, doc_id, data) @ i 
+        ==> (Ex sig #j. DocumentIssued(doc_id, data, sig) @ j & j < i)"
+
+// 3. Secrecy: Is the document data secure from the Dolev-Yao attacker?
+// Note: In this abstracted model, Out() puts data on a public channel. 
+// This lemma WILL FAIL unless you add TLS abstraction (symmetric encryption 
+// with ephemeral keys) wrapping the Out() channels. It highlights the 
+// absolute necessity of the "HTTPS/TLS 1.2+" mentioned in Digilocker TM.jpg.
+lemma document_secrecy:
+    "All doc_id data sig #i. 
+        DocumentIssued(doc_id, data, sig) @ i 
+        ==> not (Ex #j. K(data) @ j)"
+
+end
