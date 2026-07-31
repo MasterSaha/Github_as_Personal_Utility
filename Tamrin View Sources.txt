@@ -1,0 +1,757 @@
+Sources of "!CoreSession( t.1, t.2, t.3, t.4
+                 ) ▶₀ #i" (1 cases)
+
+Source 1 of 1 / named "SSO_Consent_Token_Generation"
+
+Open Graph in New Tab
+
+"!CoreSession( t.1, t.2, t.3, t.4 ) ▶₀ #i"
+
+last: none
+
+formulas:
+
+subterms:
+
+equations:
+  subst:
+    $Requester.6 <~ {t.2}
+    $User.6 <~ {t.1}
+    ~doc_id.6 <~ {t.3}
+    sign(<'Consent', $User.6, $Requester.6, ~doc_id.6>,
+         ~ltkSSO.6) <~ {t.4}
+  conj:
+
+lemmas:
+
+allowed cases: raw
+
+solved formulas:
+
+unsolved constraints:
+  !KU( <<'AuthReq', $User.6, $Requester.6>,
+        pkce_challenge.6>
+  ) @ #vk.8 // nr: 2" (probably constructible)"
+  
+  !KU( <'AuthReq', $User.6, $Requester.6>
+  ) @ #vk.9 // nr: 3" (currently deducible)"
+  
+  !KU( 'AuthReq'
+  ) @ #vk.10 // nr: 4" (currently deducible)"
+  
+  !KU( <$User.6, $Requester.6>
+  ) @ #vk.11 // nr: 5" (currently deducible)"
+  
+  !KU( $User.6 ) @ #vk.12 // nr: 6" (currently deducible)"
+  
+  !KU( $Requester.6
+  ) @ #vk.13 // nr: 7" (currently deducible)"
+  
+  !KU( pkce_challenge.6
+  ) @ #vk.14 // nr: 8" (probably constructible)"
+
+solved constraints:
+  !CoreSession( $User.6, $Requester.6, ~doc_id.6,
+                sign(<'Consent', $User.6, $Requester.6, ~doc_id.6>,
+                     ~ltkSSO.6)
+  ) ▶₀ #i // nr: 0" (useful2)"
+  
+  !Ltk( $SSO.6, ~ltkSSO.6
+  ) ▶₁ #vr.5 // nr: 9 (from rule SSO_Consent_Token_Generation)" (useful2)"
+
+Sources of "!Ltk( t.1, t.2 ) ▶₀ #i" (1 cases)
+
+Source 1 of 1 / named "Register_PKI"
+
+Open Graph in New Tab
+
+"!Ltk( t.1, t.2 ) ▶₀ #i"
+
+last: none
+
+formulas:
+
+subterms:
+
+equations:
+  subst:
+    $A.4 <~ {t.1}
+    ~ltk.4 <~ {t.2}
+  conj:
+
+lemmas:
+
+allowed cases: raw
+
+solved formulas:
+
+unsolved constraints:
+
+solved constraints:
+  !Ltk( $A.4, ~ltk.4 ) ▶₀ #i // nr: 0" (useful2)"
+
+Sources of "!Pk( t.1, t.2 ) ▶₀ #i" (1 cases)
+
+Source 1 of 1 / named "Register_PKI"
+
+Open Graph in New Tab
+
+"!Pk( t.1, t.2 ) ▶₀ #i"
+
+last: none
+
+formulas:
+
+subterms:
+
+equations:
+  subst:
+    $A.4 <~ {t.1}
+    pk(~ltk.4) <~ {t.2}
+  conj:
+
+lemmas:
+
+allowed cases: raw
+
+solved formulas:
+
+unsolved constraints:
+
+solved constraints:
+  !Pk( $A.4, pk(~ltk.4) ) ▶₀ #i // nr: 0" (useful2)"
+
+Sources of "!KU( ~t.1 ) @ #i" (3 cases)
+
+Source 1 of 3 / named "User_Auth_Request"
+
+Open Graph in New Tab
+
+"!KU( ~t.1 ) @ #i"
+
+last: none
+
+formulas:
+
+subterms:
+
+equations:
+  subst:
+  conj:
+
+lemmas:
+
+allowed cases: raw
+
+solved formulas:
+
+unsolved constraints:
+
+solved constraints:
+  !KU( ~t.1
+  ) @ #i // nr: 0 (from rule Coerce)" (currently deducible)"
+  
+  !Ltk( $User.7, ~ltkUser.7
+  ) ▶₀ #vr.6 // nr: 4 (from rule User_Auth_Request)" (useful2)"
+
+Source 2 of 3 / named "Core_Fetch_Issuer"
+
+Open Graph in New Tab
+
+"!KU( ~t.1 ) @ #i"
+
+last: none
+
+formulas:
+
+subterms:
+
+equations:
+  subst:
+  conj:
+
+lemmas:
+
+allowed cases: raw
+
+solved formulas:
+
+unsolved constraints:
+  !KU( <<'AuthReq', $User.7, $Requester.7>,
+        pkce_challenge.15>
+  ) @ #vk.17 // nr: 10" (probably constructible)"
+  
+  !KU( <'AuthReq', $User.7, $Requester.7>
+  ) @ #vk.18 // nr: 11" (currently deducible)"
+  
+  !KU( 'AuthReq'
+  ) @ #vk.19 // nr: 12" (currently deducible)"
+  
+  !KU( <$User.7, $Requester.7>
+  ) @ #vk.20 // nr: 13" (currently deducible)"
+  
+  !KU( $User.7 ) @ #vk.21 // nr: 14" (currently deducible)"
+  
+  !KU( $Requester.7
+  ) @ #vk.22 // nr: 15" (currently deducible)"
+  
+  !KU( pkce_challenge.15
+  ) @ #vk.23 // nr: 16" (probably constructible)"
+
+solved constraints:
+  !KU( ~t.1
+  ) @ #i // nr: 0 (from rule Coerce)" (currently deducible)"
+  
+  !CoreSession( $User.7, $Requester.7, ~t.1,
+                sign(<'Consent', $User.7, $Requester.7, ~t.1>,
+                     ~ltkSSO.15)
+  ) ▶₀ #vr.6 // nr: 4 (from rule Core_Fetch_Issuer)" (useful2)"
+  
+  !Ltk( $SSO.15, ~ltkSSO.15
+  ) ▶₁ #vr.14 // nr: 17 (from rule SSO_Consent_Token_Generation)" (useful2)"
+
+Source 3 of 3 / named "fresh"
+
+Open Graph in New Tab
+
+"!KU( ~t.1 ) @ #i"
+
+last: none
+
+formulas:
+
+subterms:
+
+equations:
+  subst:
+  conj:
+
+lemmas:
+
+allowed cases: raw
+
+solved formulas:
+
+unsolved constraints:
+
+solved constraints:
+  !KU( ~t.1
+  ) @ #i // nr: 0 (from rule FreshConstr)" (useful2)"
+
+Sources of "!KU( adec(t.1, t.2) ) @ #i" (1 cases)
+
+Source 1 of 1 / named "c_adec"
+
+Open Graph in New Tab
+
+"!KU( adec(t.1, t.2) ) @ #i"
+
+last: none
+
+formulas:
+
+subterms:
+
+equations:
+  subst:
+  conj:
+
+lemmas:
+
+allowed cases: raw
+
+solved formulas:
+
+unsolved constraints:
+  !KU( t.1 ) @ #vk.5 // nr: 3" (probably constructible)"
+  
+  !KU( t.2 ) @ #vk.6 // nr: 4" (probably constructible)"
+
+solved constraints:
+  !KU( adec(t.1, t.2)
+  ) @ #i // nr: 0 (from rule Constrc_adec)" (probably constructible)"
+
+Sources of "!KU( aenc(t.1, t.2) ) @ #i" (1 cases)
+
+Source 1 of 1 / named "c_aenc"
+
+Open Graph in New Tab
+
+"!KU( aenc(t.1, t.2) ) @ #i"
+
+last: none
+
+formulas:
+
+subterms:
+
+equations:
+  subst:
+  conj:
+
+lemmas:
+
+allowed cases: raw
+
+solved formulas:
+
+unsolved constraints:
+  !KU( t.1 ) @ #vk.5 // nr: 3" (probably constructible)"
+  
+  !KU( t.2 ) @ #vk.6 // nr: 4" (probably constructible)"
+
+solved constraints:
+  !KU( aenc(t.1, t.2)
+  ) @ #i // nr: 0 (from rule Constrc_aenc)" (probably constructible)"
+
+Sources of "!KU( fst(t.1) ) @ #i" (1 cases)
+
+Source 1 of 1 / named "c_fst"
+
+Open Graph in New Tab
+
+"!KU( fst(t.1) ) @ #i"
+
+last: none
+
+formulas:
+
+subterms:
+
+equations:
+  subst:
+  conj:
+
+lemmas:
+
+allowed cases: raw
+
+solved formulas:
+
+unsolved constraints:
+  !KU( t.1 ) @ #vk.3 // nr: 2" (probably constructible)"
+
+solved constraints:
+  !KU( fst(t.1)
+  ) @ #i // nr: 0 (from rule Constrc_fst)" (probably constructible)"
+
+Sources of "!KU( h(t.1) ) @ #i" (1 cases)
+
+Source 1 of 1 / named "c_h"
+
+Open Graph in New Tab
+
+"!KU( h(t.1) ) @ #i"
+
+last: none
+
+formulas:
+
+subterms:
+
+equations:
+  subst:
+  conj:
+
+lemmas:
+
+allowed cases: raw
+
+solved formulas:
+
+unsolved constraints:
+  !KU( t.1 ) @ #vk.3 // nr: 2" (probably constructible)"
+
+solved constraints:
+  !KU( h(t.1)
+  ) @ #i // nr: 0 (from rule Constrc_h)" (probably constructible)"
+
+Sources of "!KU( pk(t.1) ) @ #i" (2 cases)
+
+Source 1 of 2 / named "c_pk"
+
+Open Graph in New Tab
+
+"!KU( pk(t.1) ) @ #i"
+
+last: none
+
+formulas:
+
+subterms:
+
+equations:
+  subst:
+  conj:
+
+lemmas:
+
+allowed cases: raw
+
+solved formulas:
+
+unsolved constraints:
+  !KU( t.1 ) @ #vk.3 // nr: 2" (probably constructible)"
+
+solved constraints:
+  !KU( pk(t.1)
+  ) @ #i // nr: 0 (from rule Constrc_pk)" (probably constructible)"
+
+Source 2 of 2 / named "Register_PKI"
+
+Open Graph in New Tab
+
+"!KU( pk(t.1) ) @ #i"
+
+last: none
+
+formulas:
+
+subterms:
+
+equations:
+  subst: ~ltk.7 <~ {t.1}
+  conj:
+
+lemmas:
+
+allowed cases: raw
+
+solved formulas:
+
+unsolved constraints:
+
+solved constraints:
+  !KU( pk(~ltk.7)
+  ) @ #i // nr: 0 (from rule Coerce)" (currently deducible)"
+
+Sources of "!KU( sdec(t.1, t.2) ) @ #i" (1 cases)
+
+Source 1 of 1 / named "c_sdec"
+
+Open Graph in New Tab
+
+"!KU( sdec(t.1, t.2) ) @ #i"
+
+last: none
+
+formulas:
+
+subterms:
+
+equations:
+  subst:
+  conj:
+
+lemmas:
+
+allowed cases: raw
+
+solved formulas:
+
+unsolved constraints:
+  !KU( t.1 ) @ #vk.5 // nr: 3" (probably constructible)"
+  
+  !KU( t.2 ) @ #vk.6 // nr: 4" (probably constructible)"
+
+solved constraints:
+  !KU( sdec(t.1, t.2)
+  ) @ #i // nr: 0 (from rule Constrc_sdec)" (probably constructible)"
+
+Sources of "!KU( senc(t.1, t.2) ) @ #i" (1 cases)
+
+Source 1 of 1 / named "c_senc"
+
+Open Graph in New Tab
+
+"!KU( senc(t.1, t.2) ) @ #i"
+
+last: none
+
+formulas:
+
+subterms:
+
+equations:
+  subst:
+  conj:
+
+lemmas:
+
+allowed cases: raw
+
+solved formulas:
+
+unsolved constraints:
+  !KU( t.1 ) @ #vk.5 // nr: 3" (probably constructible)"
+  
+  !KU( t.2 ) @ #vk.6 // nr: 4" (probably constructible)"
+
+solved constraints:
+  !KU( senc(t.1, t.2)
+  ) @ #i // nr: 0 (from rule Constrc_senc)" (probably constructible)"
+
+Sources of "!KU( sign(t.1, t.2) ) @ #i" (4 cases)
+
+Source 1 of 4 / named "c_sign"
+
+Open Graph in New Tab
+
+"!KU( sign(t.1, t.2) ) @ #i"
+
+last: none
+
+formulas:
+
+subterms:
+
+equations:
+  subst:
+  conj:
+
+lemmas:
+
+allowed cases: raw
+
+solved formulas:
+
+unsolved constraints:
+  !KU( t.1 ) @ #vk.5 // nr: 3" (probably constructible)"
+  
+  !KU( t.2 ) @ #vk.6 // nr: 4" (probably constructible)"
+
+solved constraints:
+  !KU( sign(t.1, t.2)
+  ) @ #i // nr: 0 (from rule Constrc_sign)" (probably constructible)"
+
+Source 2 of 4 / named "SSO_Consent_Token_Generation"
+
+Open Graph in New Tab
+
+"!KU( sign(t.1, t.2) ) @ #i"
+
+last: none
+
+formulas:
+
+subterms:
+
+equations:
+  subst:
+    ~ltkSSO.10 <~ {t.2}
+    <'Consent', $User.10, $Requester.10, ~doc_id.10
+    > <~ {t.1}
+  conj:
+
+lemmas:
+
+allowed cases: raw
+
+solved formulas:
+
+unsolved constraints:
+  !KU( <<'AuthReq', $User.10, $Requester.10>,
+        pkce_challenge.10>
+  ) @ #vk.12 // nr: 4" (probably constructible)"
+  
+  !KU( <'AuthReq', $User.10, $Requester.10>
+  ) @ #vk.13 // nr: 5" (currently deducible)"
+  
+  !KU( 'AuthReq'
+  ) @ #vk.14 // nr: 6" (currently deducible)"
+  
+  !KU( <$User.10, $Requester.10>
+  ) @ #vk.15 // nr: 7" (currently deducible)"
+  
+  !KU( $User.10 ) @ #vk.16 // nr: 8" (currently deducible)"
+  
+  !KU( $Requester.10
+  ) @ #vk.17 // nr: 9" (currently deducible)"
+  
+  !KU( pkce_challenge.10
+  ) @ #vk.18 // nr: 10" (probably constructible)"
+
+solved constraints:
+  !KU( sign(<'Consent', $User.10, $Requester.10,
+             ~doc_id.10>,
+            ~ltkSSO.10)
+  ) @ #i // nr: 0 (from rule Coerce)" (currently deducible)"
+  
+  !Ltk( $SSO.10, ~ltkSSO.10
+  ) ▶₁ #vr.9 // nr: 11 (from rule SSO_Consent_Token_Generation)" (useful2)"
+
+Source 3 of 4 / named "Core_Fetch_Issuer"
+
+Open Graph in New Tab
+
+"!KU( sign(t.1, t.2) ) @ #i"
+
+last: none
+
+formulas:
+
+subterms:
+
+equations:
+  subst:
+    ~ltkSSO.18 <~ {t.2}
+    <'Consent', $User.10, $Requester.10, ~doc_id.10
+    > <~ {t.1}
+  conj:
+
+lemmas:
+
+allowed cases: raw
+
+solved formulas:
+
+unsolved constraints:
+  !KU( <<'AuthReq', $User.10, $Requester.10>,
+        pkce_challenge.18>
+  ) @ #vk.20 // nr: 10" (probably constructible)"
+  
+  !KU( <'AuthReq', $User.10, $Requester.10>
+  ) @ #vk.21 // nr: 11" (currently deducible)"
+  
+  !KU( 'AuthReq'
+  ) @ #vk.22 // nr: 12" (currently deducible)"
+  
+  !KU( <$User.10, $Requester.10>
+  ) @ #vk.23 // nr: 13" (currently deducible)"
+  
+  !KU( $User.10
+  ) @ #vk.24 // nr: 14" (currently deducible)"
+  
+  !KU( $Requester.10
+  ) @ #vk.25 // nr: 15" (currently deducible)"
+  
+  !KU( pkce_challenge.18
+  ) @ #vk.26 // nr: 16" (probably constructible)"
+
+solved constraints:
+  !KU( sign(<'Consent', $User.10, $Requester.10,
+             ~doc_id.10>,
+            ~ltkSSO.18)
+  ) @ #i // nr: 0 (from rule Coerce)" (currently deducible)"
+  
+  !CoreSession( $User.10, $Requester.10, ~doc_id.10,
+                sign(<'Consent', $User.10, $Requester.10, ~doc_id.10
+                     >,
+                     ~ltkSSO.18)
+  ) ▶₀ #vr.9 // nr: 4 (from rule Core_Fetch_Issuer)" (useful2)"
+  
+  !Ltk( $SSO.18, ~ltkSSO.18
+  ) ▶₁ #vr.17 // nr: 17 (from rule SSO_Consent_Token_Generation)" (useful2)"
+
+Source 4 of 4 / named "Issuer_Provides_Document"
+
+Open Graph in New Tab
+
+"!KU( sign(t.1, t.2) ) @ #i"
+
+last: none
+
+formulas:
+
+subterms:
+
+equations:
+  subst:
+    ~ltkIssuer.10 <~ {t.2}
+    <'DocData', ~doc_id.10, ~secret_data.10> <~ {t.1}
+  conj:
+
+lemmas:
+
+allowed cases: raw
+
+solved formulas:
+
+unsolved constraints:
+  !KU( <'FetchDocRequest', ~doc_id.10, jwt_token.10>
+  ) @ #vk.12 // nr: 4" (useful2)"
+  
+  !KU( 'FetchDocRequest'
+  ) @ #vk.13 // nr: 5" (currently deducible)"
+  
+  !KU( <~doc_id.10, jwt_token.10>
+  ) @ #vk.14 // nr: 6" (useful2)"
+  
+  !KU( ~doc_id.10 ) @ #vk.15 // nr: 7" (useful2)"
+  
+  !KU( jwt_token.10
+  ) @ #vk.16 // nr: 8" (probably constructible)"
+
+solved constraints:
+  !KU( sign(<'DocData', ~doc_id.10, ~secret_data.10>,
+            ~ltkIssuer.10)
+  ) @ #i // nr: 0 (from rule Coerce)" (currently deducible)"
+  
+  !Ltk( $Issuer.10, ~ltkIssuer.10
+  ) ▶₁ #vr.9 // nr: 9 (from rule Issuer_Provides_Document)" (useful2)"
+
+Sources of "!KU( snd(t.1) ) @ #i" (1 cases)
+
+Source 1 of 1 / named "c_snd"
+
+Open Graph in New Tab
+
+"!KU( snd(t.1) ) @ #i"
+
+last: none
+
+formulas:
+
+subterms:
+
+equations:
+  subst:
+  conj:
+
+lemmas:
+
+allowed cases: raw
+
+solved formulas:
+
+unsolved constraints:
+  !KU( t.1 ) @ #vk.3 // nr: 2" (probably constructible)"
+
+solved constraints:
+  !KU( snd(t.1)
+  ) @ #i // nr: 0 (from rule Constrc_snd)" (probably constructible)"
+
+Sources of "!KU( verify(t.1, t.2, t.3) ) @ #i" (1 cases)
+
+Source 1 of 1 / named "c_verify"
+
+Open Graph in New Tab
+
+"!KU( verify(t.1, t.2, t.3) ) @ #i"
+
+last: none
+
+formulas:
+
+subterms:
+
+equations:
+  subst:
+  conj:
+
+lemmas:
+
+allowed cases: raw
+
+solved formulas:
+
+unsolved constraints:
+  !KU( t.1 ) @ #vk.7 // nr: 4" (probably constructible)"
+  
+  !KU( t.2 ) @ #vk.8 // nr: 5" (probably constructible)"
+  
+  !KU( t.3 ) @ #vk.9 // nr: 6" (probably constructible)"
+
+solved constraints:
+  !KU( verify(t.1, t.2, t.3)
+  ) @ #i // nr: 0 (from rule Constrc_verify)" (probably constructible)"
