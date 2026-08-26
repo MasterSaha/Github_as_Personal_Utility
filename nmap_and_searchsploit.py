@@ -62,11 +62,11 @@ def parse_nmap_to_numpy(nmap_text):
         return np.array([])
 
 def run_searchsploit(ports_array, target_ip):
-    """Queries Exploit-DB via SearchSploit for detected service versions."""
+    """Queries Exploit-DB via SearchSploit and outputs to both file and CLI."""
     output_filename = f"searchsploit_results_{target_ip.replace('.', '_')}.txt"
     print(f"\n[*] Initiating vulnerability mapping with SearchSploit...")
     
-    # Track executed queries to avoid running the same search twice (e.g., multiple Exim smtpd 4.99.5)
+    # Track executed queries to avoid running the same search twice
     executed_queries = set()
     
     with open(output_filename, "w") as file:
@@ -85,26 +85,38 @@ def run_searchsploit(ports_array, target_ip):
             command = ["searchsploit", version]
             cmd_string = " ".join(command)
             
-            print(f"[*] Querying exploit database for: {version}")
+            print(f"\n[*] Querying exploit database for: {version}")
+            print(f"--- Command: {cmd_string} ---")
             
             try:
-                # check=False allows the script to continue even if searchsploit finds no matches (which returns a non-zero exit code)
+                # check=False allows the script to continue even if searchsploit finds no matches
                 result = subprocess.run(command, capture_output=True, text=True, check=False)
                 
-                file.write(f"--- Command: {cmd_string} ---\n")
-                
-                # Searchsploit might output to stderr or stdout depending on the query result
+                # Capture standard output or standard error if output is empty
                 output = result.stdout if result.stdout.strip() else result.stderr
-                file.write(f"{output.strip()}\n\n")
+                clean_output = output.strip()
+                
+                # 1. Log to the text file
+                file.write(f"--- Command: {cmd_string} ---\n")
+                file.write(f"{clean_output}\n\n")
                 file.write("=" * 70 + "\n\n")
                 
+                # 2. Display on the CLI
+                if clean_output:
+                    print(clean_output)
+                else:
+                    print("No exploits found in the local database for this version.")
+                print("=" * 70)
+                
             except FileNotFoundError:
-                print("[-] Error: 'searchsploit' is not installed or not found in your system's PATH.")
+                error_msg = "[-] Error: 'searchsploit' is not installed or not found in your system's PATH."
+                print(error_msg)
+                
                 file.write(f"--- Command: {cmd_string} ---\n")
-                file.write("Error: searchsploit execution failed. Command not found.\n")
+                file.write(f"{error_msg}\n")
                 break # Exit the loop early if the tool isn't installed
 
-    print(f"[+] Vulnerability mapping complete! SearchSploit results saved to: {output_filename}")
+    print(f"\n[+] Vulnerability mapping complete! SearchSploit results saved to: {output_filename}")
 
 
 def main():
