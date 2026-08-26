@@ -52,7 +52,12 @@ def parse_nmap_to_numpy(nmap_text):
             port = match.group(1)
             state = match.group(2)
             service = match.group(3)
-            version = match.group(4).strip() 
+            
+            # Extract the raw version string
+            raw_version = match.group(4)
+            
+            # Remove anything inside parentheses, including the parentheses, and strip trailing spaces
+            version = re.sub(r'\(.*?\)', '', raw_version).strip() 
             
             parsed_data.append([port, state, service, version])
             
