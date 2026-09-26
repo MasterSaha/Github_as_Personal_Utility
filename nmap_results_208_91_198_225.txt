@@ -1,0 +1,369 @@
+Starting Nmap 7.99 ( https://nmap.org ) at 2026-09-27 00:32 +0530
+Warning: 208.91.198.225 giving up on port because retransmission cap hit (6).
+Nmap scan report for 208-91-198-225.unifiedlayer.com (208.91.198.225)
+Host is up (0.27s latency).
+Not shown: 65454 closed tcp ports (reset), 59 filtered tcp ports (no-response)
+PORT     STATE SERVICE      VERSION
+21/tcp   open  ftp          Pure-FTPd
+22/tcp   open  ssh          OpenSSH 7.4 (protocol 2.0)
+| ssh-hostkey: 
+|   1024 b2:42:eb:be:3f:da:f4:4a:94:4d:2e:07:5b:5b:b1:c1 (DSA)
+|_  2048 db:38:8b:8d:10:68:c3:94:67:3d:2b:47:2e:ee:1e:16 (RSA)
+26/tcp   open  smtp         Exim smtpd 4.100.1
+| smtp-commands: bh-58.webhostbox.net Hello 208-91-198-225.unifiedlayer.com [49.36.41.232], SIZE 52428800, LIMITS MAILMAX=50 RCPTMAX=50000, 8BITMIME, PIPELINING, PIPECONNECT, AUTH PLAIN LOGIN, STARTTLS, HELP
+|_ Commands supported: AUTH STARTTLS HELO EHLO MAIL RCPT DATA BDAT NOOP QUIT RSET HELP
+53/tcp   open  domain       ISC BIND 9.11.4-P2 (RedHat Enterprise Linux 7)
+| dns-nsid: 
+|_  bind.version: 9.11.4-P2-RedHat-9.11.4-26.P2.el7_9.9
+80/tcp   open  http         Apache httpd
+| http-robots.txt: 1 disallowed entry 
+|_/
+|_http-server-header: Apache
+110/tcp  open  pop3         Dovecot pop3d
+|_pop3-capabilities: TOP USER UIDL STLS PIPELINING CAPA RESP-CODES AUTH-RESP-CODE SASL(PLAIN LOGIN)
+| ssl-cert: Subject: commonName=*.webhostbox.net
+| Subject Alternative Name: DNS:*.webhostbox.net, DNS:webhostbox.net
+| Not valid before: 2026-04-10T00:00:00
+|_Not valid after:  2026-10-25T23:59:59
+|_ssl-date: TLS randomness does not represent time
+143/tcp  open  imap         Dovecot imapd
+|_ssl-date: TLS randomness does not represent time
+| ssl-cert: Subject: commonName=*.webhostbox.net
+| Subject Alternative Name: DNS:*.webhostbox.net, DNS:webhostbox.net
+| Not valid before: 2026-04-10T00:00:00
+|_Not valid after:  2026-10-25T23:59:59
+|_imap-capabilities: AUTH=PLAIN STARTTLS more capabilities post-login IMAP4rev1 listed have ENABLE IDLE LITERAL+ LOGIN-REFERRALS AUTH=LOGINA0001 SASL-IR Pre-login ID OK NAMESPACE
+443/tcp  open  ssl/http     Apache httpd
+| http-robots.txt: 1 disallowed entry 
+|_/
+|_http-server-header: Apache
+|_ssl-date: TLS randomness does not represent time
+| ssl-cert: Subject: commonName=*.webhostbox.net
+| Subject Alternative Name: DNS:*.webhostbox.net, DNS:webhostbox.net
+| Not valid before: 2026-04-10T00:00:00
+|_Not valid after:  2026-10-25T23:59:59
+|_http-title: Did not follow redirect to http://www.explorefreeresults.com/?dn=bh-58.webhostbox.net&pid=5POJ5651L&spfwd=1
+465/tcp  open  ssl/smtp     Exim smtpd 4.100.1
+|_smtp-commands: Couldn't establish connection on port 465
+|_ssl-date: TLS randomness does not represent time
+587/tcp  open  smtp         Exim smtpd 4.100.1
+| smtp-commands: bh-58.webhostbox.net Hello 208-91-198-225.unifiedlayer.com [49.36.41.232], SIZE 52428800, LIMITS MAILMAX=50 RCPTMAX=50000, 8BITMIME, PIPELINING, PIPECONNECT, AUTH PLAIN LOGIN, STARTTLS, HELP
+|_ Commands supported: AUTH STARTTLS HELO EHLO MAIL RCPT DATA BDAT NOOP QUIT RSET HELP
+993/tcp  open  imaps?
+| ssl-cert: Subject: commonName=*.webhostbox.net
+| Subject Alternative Name: DNS:*.webhostbox.net, DNS:webhostbox.net
+| Not valid before: 2026-04-10T00:00:00
+|_Not valid after:  2026-10-25T23:59:59
+|_ssl-date: TLS randomness does not represent time
+995/tcp  open  pop3s?
+| ssl-cert: Subject: commonName=*.webhostbox.net
+| Subject Alternative Name: DNS:*.webhostbox.net, DNS:webhostbox.net
+| Not valid before: 2026-04-10T00:00:00
+|_Not valid after:  2026-10-25T23:59:59
+|_ssl-date: TLS randomness does not represent time
+2077/tcp open  webdav
+|_http-server-header: cPanel
+| fingerprint-strings: 
+|   SIPOptions: 
+|     HTTP/1.1 200 OK
+|     Date: Sat, 26 Sep 2026 19:15:27 GMT
+|     Server: cPanel
+|     Persistent-Auth: false
+|     Host: bh-58.webhostbox.net:2077
+|     Cache-Control: no-cache, no-store, must-revalidate, private
+|     Connection: Keep-Alive
+|     Vary: Accept-Encoding
+|     Allow: UNLOCK, POST, PROPPATCH, COPY, DELETE, OPTIONS, PROPFIND, LOCK, GET, HEAD, MOVE, PUT, MKCOL
+|     Content-Length: 0
+|     Content-Type: text/plain
+|     Expires: Fri, 01 Jan 1990 00:00:00 GMT
+|     DAV: 1, 2
+|     Keep-Alive: timeout=15, max=96
+|_    MS-Author-Via: DAV
+2078/tcp open  ssl/http     cPanel httpd (unauthorized)
+|_ssl-date: TLS randomness does not represent time
+| ssl-cert: Subject: commonName=*.webhostbox.net
+| Subject Alternative Name: DNS:*.webhostbox.net, DNS:webhostbox.net
+| Not valid before: 2026-04-10T00:00:00
+|_Not valid after:  2026-10-25T23:59:59
+2082/tcp open  infowave?
+| fingerprint-strings: 
+|   SIPOptions: 
+|     HTTP/1.0 200 OK
+|     Connection: close
+|     Content-Type: text/html; charset="utf-8"
+|     Date: Sat, 26 Sep 2026 19:15:27 GMT
+|     Cache-Control: no-cache, no-store, must-revalidate, private
+|     Pragma: no-cache
+|     Set-Cookie: cprelogin=no; HttpOnly; SameSite=Lax; expires=Thu, 01-Jan-1970 00:00:01 GMT; path=/; port=2082
+|     Set-Cookie: cpsession=~pre%3aC1V6h73kVk8_ZoGE%2cda5ea2f1777665df32ed2bc7076c7757; HttpOnly; SameSite=Lax; path=/; port=2082
+|     Set-Cookie: roundcube_sessid=expired; HttpOnly; SameSite=Lax; expires=Thu, 01-Jan-1970 00:00:01 GMT; path=/; port=2082
+|     Set-Cookie: roundcube_sessauth=expired; HttpOnly; SameSite=Lax; domain=bh-58.webhostbox.net; expires=Thu, 01-Jan-1970 00:00:01 GMT; path=/; port=2082
+|     Set-Cookie: PPA_ID=expired; HttpOnly; SameSite=Lax; expires=Thu, 01-Jan-1970 00:00:01 GMT; path=/; port=2082
+|     Cache-Control: no-cache, no-store, must-revalidate, private
+|_    X-Frame-Options: SAMEORIGIN
+2083/tcp open  ssl/radsec?
+| fingerprint-strings: 
+|   GetRequest: 
+|     HTTP/1.0 200 OK
+|     Connection: close
+|     Content-Type: text/html; charset="utf-8"
+|     Date: Sat, 26 Sep 2026 19:14:14 GMT
+|     Cache-Control: no-cache, no-store, must-revalidate, private
+|     Pragma: no-cache
+|     Set-Cookie: cprelogin=no; HttpOnly; SameSite=Lax; expires=Thu, 01-Jan-1970 00:00:01 GMT; path=/; port=2083; secure
+|     Set-Cookie: cpsession=~pre%3a1dCiypkDnunEecx8%2cfaff0803f5c369493d153210aeac184b; HttpOnly; SameSite=Lax; path=/; port=2083; secure
+|     Set-Cookie: roundcube_sessid=expired; HttpOnly; SameSite=Lax; expires=Thu, 01-Jan-1970 00:00:01 GMT; path=/; port=2083; secure
+|     Set-Cookie: roundcube_sessauth=expired; HttpOnly; SameSite=Lax; domain=bh-58.webhostbox.net; expires=Thu, 01-Jan-1970 00:00:01 GMT; path=/; port=2083; secure
+|     Set-Cookie: PPA_ID=expired; HttpOnly; SameSite=Lax; expires=Thu, 01-Jan-1970 00:00:01 GMT; path=/; port=2083; secure
+|     Cache-Control: no-cache, no-store, must-revalidate,
+|   HTTPOptions: 
+|     HTTP/1.0 200 OK
+|     Connection: close
+|     Content-Type: text/html; charset="utf-8"
+|     Date: Sat, 26 Sep 2026 19:14:19 GMT
+|     Cache-Control: no-cache, no-store, must-revalidate, private
+|     Pragma: no-cache
+|     Set-Cookie: cprelogin=no; HttpOnly; SameSite=Lax; expires=Thu, 01-Jan-1970 00:00:01 GMT; path=/; port=2083; secure
+|     Set-Cookie: cpsession=~pre%3agHy4EoNPP9eGCL1P%2cbc251b02365d2bb08d6db166d9a0b9e8; HttpOnly; SameSite=Lax; path=/; port=2083; secure
+|     Set-Cookie: roundcube_sessid=expired; HttpOnly; SameSite=Lax; expires=Thu, 01-Jan-1970 00:00:01 GMT; path=/; port=2083; secure
+|     Set-Cookie: roundcube_sessauth=expired; HttpOnly; SameSite=Lax; domain=bh-58.webhostbox.net; expires=Thu, 01-Jan-1970 00:00:01 GMT; path=/; port=2083; secure
+|     Set-Cookie: PPA_ID=expired; HttpOnly; SameSite=Lax; expires=Thu, 01-Jan-1970 00:00:01 GMT; path=/; port=2083; secure
+|_    Cache-Control: no-cache, no-store, must-revalidate,
+| ssl-cert: Subject: commonName=*.webhostbox.net
+| Subject Alternative Name: DNS:*.webhostbox.net, DNS:webhostbox.net
+| Not valid before: 2026-04-10T00:00:00
+|_Not valid after:  2026-10-25T23:59:59
+|_ssl-date: TLS randomness does not represent time
+2086/tcp open  gnunet?
+| fingerprint-strings: 
+|   SIPOptions: 
+|     HTTP/1.0 200 OK
+|     Connection: close
+|     Content-Type: text/html; charset="utf-8"
+|     Date: Sat, 26 Sep 2026 19:15:27 GMT
+|     Cache-Control: no-cache, no-store, must-revalidate, private
+|     Pragma: no-cache
+|     Set-Cookie: whostmgrrelogin=no; HttpOnly; SameSite=Lax; expires=Thu, 01-Jan-1970 00:00:01 GMT; path=/; port=2086
+|     Set-Cookie: whostmgrsession=~pre%3adC2MaRpDSILeTvMH%2cce6a84ec48a4b104ef0ae253d76006e5; HttpOnly; SameSite=Lax; path=/; port=2086
+|     Set-Cookie: roundcube_sessid=expired; HttpOnly; SameSite=Lax; expires=Thu, 01-Jan-1970 00:00:01 GMT; path=/; port=2086
+|     Set-Cookie: roundcube_sessauth=expired; HttpOnly; SameSite=Lax; domain=bh-58.webhostbox.net; expires=Thu, 01-Jan-1970 00:00:01 GMT; path=/; port=2086
+|     Set-Cookie: PPA_ID=expired; HttpOnly; SameSite=Lax; expires=Thu, 01-Jan-1970 00:00:01 GMT; path=/; port=2086
+|     Cache-Control: no-cache, no-store, must-revalidate, private
+|_    X-Frame-Options: SA
+2087/tcp open  ssl/eli?
+| ssl-cert: Subject: commonName=*.webhostbox.net
+| Subject Alternative Name: DNS:*.webhostbox.net, DNS:webhostbox.net
+| Not valid before: 2026-04-10T00:00:00
+|_Not valid after:  2026-10-25T23:59:59
+|_ssl-date: TLS randomness does not represent time
+| fingerprint-strings: 
+|   RTSPRequest: 
+|     HTTP/1.0 200 OK
+|     Connection: close
+|     Content-Type: text/html; charset="utf-8"
+|     Date: Sat, 26 Sep 2026 19:14:26 GMT
+|     Cache-Control: no-cache, no-store, must-revalidate, private
+|     Pragma: no-cache
+|     Set-Cookie: whostmgrrelogin=no; HttpOnly; SameSite=Lax; expires=Thu, 01-Jan-1970 00:00:01 GMT; path=/; port=2087; secure
+|     Set-Cookie: whostmgrsession=~pre%3aBpXCrIR3KqradK89%2cf42ed9bf7b22c25d72aad5801abd473e; HttpOnly; SameSite=Lax; path=/; port=2087; secure
+|     Set-Cookie: roundcube_sessid=expired; HttpOnly; SameSite=Lax; expires=Thu, 01-Jan-1970 00:00:01 GMT; path=/; port=2087; secure
+|     Set-Cookie: roundcube_sessauth=expired; HttpOnly; SameSite=Lax; domain=bh-58.webhostbox.net; expires=Thu, 01-Jan-1970 00:00:01 GMT; path=/; port=2087; secure
+|     Set-Cookie: PPA_ID=expired; HttpOnly; SameSite=Lax; expires=Thu, 01-Jan-1970 00:00:01 GMT; path=/; port=2087; secure
+|     Cache-Control: no-cache, no-store, must-
+|   SIPOptions: 
+|     HTTP/1.0 200 OK
+|     Connection: close
+|     Content-Type: text/html; charset="utf-8"
+|     Date: Sat, 26 Sep 2026 19:15:49 GMT
+|     Cache-Control: no-cache, no-store, must-revalidate, private
+|     Pragma: no-cache
+|     Set-Cookie: whostmgrrelogin=no; HttpOnly; SameSite=Lax; expires=Thu, 01-Jan-1970 00:00:01 GMT; path=/; port=2087; secure
+|     Set-Cookie: whostmgrsession=~pre%3a8uHNe1ob0Bruux3Z%2cf24e14c667b00a9dfa43bb0ab1e10336; HttpOnly; SameSite=Lax; path=/; port=2087; secure
+|     Set-Cookie: roundcube_sessid=expired; HttpOnly; SameSite=Lax; expires=Thu, 01-Jan-1970 00:00:01 GMT; path=/; port=2087; secure
+|     Set-Cookie: roundcube_sessauth=expired; HttpOnly; SameSite=Lax; domain=bh-58.webhostbox.net; expires=Thu, 01-Jan-1970 00:00:01 GMT; path=/; port=2087; secure
+|     Set-Cookie: PPA_ID=expired; HttpOnly; SameSite=Lax; expires=Thu, 01-Jan-1970 00:00:01 GMT; path=/; port=2087; secure
+|_    Cache-Control: no-cache, no-store, must-
+2095/tcp open  nbx-ser?
+| fingerprint-strings: 
+|   SIPOptions: 
+|     HTTP/1.0 200 OK
+|     Connection: close
+|     Content-Type: text/html; charset="utf-8"
+|     Date: Sat, 26 Sep 2026 19:15:27 GMT
+|     Cache-Control: no-cache, no-store, must-revalidate, private
+|     Pragma: no-cache
+|     Set-Cookie: webmailrelogin=no; HttpOnly; SameSite=Lax; expires=Thu, 01-Jan-1970 00:00:01 GMT; path=/; port=2095
+|     Set-Cookie: webmailsession=~pre%3aZ3XDgMEuMSqcUWkA%2cc46f4cb7a9b3453bef27d0aada5366f2; HttpOnly; SameSite=Lax; path=/; port=2095
+|     Set-Cookie: roundcube_sessid=expired; HttpOnly; SameSite=Lax; expires=Thu, 01-Jan-1970 00:00:01 GMT; path=/; port=2095
+|     Set-Cookie: roundcube_sessauth=expired; HttpOnly; SameSite=Lax; domain=bh-58.webhostbox.net; expires=Thu, 01-Jan-1970 00:00:01 GMT; path=/; port=2095
+|     Set-Cookie: PPA_ID=expired; HttpOnly; SameSite=Lax; expires=Thu, 01-Jan-1970 00:00:01 GMT; path=/; port=2095
+|_    Set-Cookie: roundcube_cookies=enabled; HttpOnly; SameSite=Lax; expires=Sun, 26-Sep
+2096/tcp open  ssl/nbx-dir?
+|_ssl-date: TLS randomness does not represent time
+| ssl-cert: Subject: commonName=*.webhostbox.net
+| Subject Alternative Name: DNS:*.webhostbox.net, DNS:webhostbox.net
+| Not valid before: 2026-04-10T00:00:00
+|_Not valid after:  2026-10-25T23:59:59
+2222/tcp open  ssh          OpenSSH 7.4 (protocol 2.0)
+| ssh-hostkey: 
+|   1024 b2:42:eb:be:3f:da:f4:4a:94:4d:2e:07:5b:5b:b1:c1 (DSA)
+|   2048 db:38:8b:8d:10:68:c3:94:67:3d:2b:47:2e:ee:1e:16 (RSA)
+|_  256 4d:68:ac:93:2e:40:a0:75:e9:71:d3:d3:1b:f7:66:7c (ECDSA)
+3306/tcp open  mysql        MySQL 5.7.23-23
+| ssl-cert: Subject: commonName=*.webhostbox.net
+| Subject Alternative Name: DNS:*.webhostbox.net, DNS:webhostbox.net
+| Not valid before: 2026-04-10T00:00:00
+|_Not valid after:  2026-10-25T23:59:59
+|_ssl-date: TLS randomness does not represent time
+| mysql-info: 
+|   Protocol: 10
+|   Version: 5.7.23-23
+|   Thread ID: 9090763
+|   Capabilities flags: 65535
+|   Some Capabilities: FoundRows, ConnectWithDatabase, SupportsCompression, Speaks41ProtocolOld, SupportsTransactions, InteractiveClient, Speaks41ProtocolNew, LongColumnFlag, DontAllowDatabaseTableColumn, SwitchToSSLAfterHandshake, LongPassword, IgnoreSigpipes, IgnoreSpaceBeforeParenthesis, ODBCClient, SupportsLoadDataLocal, Support41Auth, SupportsAuthPlugins, SupportsMultipleResults, SupportsMultipleStatments
+|   Status: Autocommit
+|   Salt: />!?=L:r+*Mbp\x01\x07ami3~
+|_  Auth Plugin Name: mysql_native_password
+6 services unrecognized despite returning data. If you know the service/version, please submit the following fingerprints at https://nmap.org/cgi-bin/submit.cgi?new-service :
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port2077-TCP:V=7.99%I=7%D=9/27%Time=6AB819D4%P=x86_64-pc-linux-gnu%r(SI
+SF:POptions,1E5,"HTTP/1\.1\x20200\x20OK\r\nDate:\x20Sat,\x2026\x20Sep\x202
+SF:026\x2019:15:27\x20GMT\r\nServer:\x20cPanel\r\nPersistent-Auth:\x20fals
+SF:e\r\nHost:\x20bh-58\.webhostbox\.net:2077\r\nCache-Control:\x20no-cache
+SF:,\x20no-store,\x20must-revalidate,\x20private\r\nConnection:\x20Keep-Al
+SF:ive\r\nVary:\x20Accept-Encoding\r\nAllow:\x20UNLOCK,\x20POST,\x20PROPPA
+SF:TCH,\x20COPY,\x20DELETE,\x20OPTIONS,\x20PROPFIND,\x20LOCK,\x20GET,\x20H
+SF:EAD,\x20MOVE,\x20PUT,\x20MKCOL\r\nContent-Length:\x200\r\nContent-Type:
+SF:\x20text/plain\r\nExpires:\x20Fri,\x2001\x20Jan\x201990\x2000:00:00\x20
+SF:GMT\r\nDAV:\x201,\x202\r\nKeep-Alive:\x20timeout=15,\x20max=96\r\nMS-Au
+SF:thor-Via:\x20DAV\r\n\r\n");
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port2082-TCP:V=7.99%I=7%D=9/27%Time=6AB819CC%P=x86_64-pc-linux-gnu%r(SI
+SF:POptions,2798,"HTTP/1\.0\x20200\x20OK\r\nConnection:\x20close\r\nConten
+SF:t-Type:\x20text/html;\x20charset=\"utf-8\"\r\nDate:\x20Sat,\x2026\x20Se
+SF:p\x202026\x2019:15:27\x20GMT\r\nCache-Control:\x20no-cache,\x20no-store
+SF:,\x20must-revalidate,\x20private\r\nPragma:\x20no-cache\r\nSet-Cookie:\
+SF:x20cprelogin=no;\x20HttpOnly;\x20SameSite=Lax;\x20expires=Thu,\x2001-Ja
+SF:n-1970\x2000:00:01\x20GMT;\x20path=/;\x20port=2082\r\nSet-Cookie:\x20cp
+SF:session=~pre%3aC1V6h73kVk8_ZoGE%2cda5ea2f1777665df32ed2bc7076c7757;\x20
+SF:HttpOnly;\x20SameSite=Lax;\x20path=/;\x20port=2082\r\nSet-Cookie:\x20ro
+SF:undcube_sessid=expired;\x20HttpOnly;\x20SameSite=Lax;\x20expires=Thu,\x
+SF:2001-Jan-1970\x2000:00:01\x20GMT;\x20path=/;\x20port=2082\r\nSet-Cookie
+SF::\x20roundcube_sessauth=expired;\x20HttpOnly;\x20SameSite=Lax;\x20domai
+SF:n=bh-58\.webhostbox\.net;\x20expires=Thu,\x2001-Jan-1970\x2000:00:01\x2
+SF:0GMT;\x20path=/;\x20port=2082\r\nSet-Cookie:\x20PPA_ID=expired;\x20Http
+SF:Only;\x20SameSite=Lax;\x20expires=Thu,\x2001-Jan-1970\x2000:00:01\x20GM
+SF:T;\x20path=/;\x20port=2082\r\nCache-Control:\x20no-cache,\x20no-store,\
+SF:x20must-revalidate,\x20private\r\nX-Frame-Options:\x20SAMEORIGIN\r\nX-"
+SF:);
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port2083-TCP:V=7.99%T=SSL%I=7%D=9/27%Time=6AB81987%P=x86_64-pc-linux-gn
+SF:u%r(GetRequest,4000,"HTTP/1\.0\x20200\x20OK\r\nConnection:\x20close\r\n
+SF:Content-Type:\x20text/html;\x20charset=\"utf-8\"\r\nDate:\x20Sat,\x2026
+SF:\x20Sep\x202026\x2019:14:14\x20GMT\r\nCache-Control:\x20no-cache,\x20no
+SF:-store,\x20must-revalidate,\x20private\r\nPragma:\x20no-cache\r\nSet-Co
+SF:okie:\x20cprelogin=no;\x20HttpOnly;\x20SameSite=Lax;\x20expires=Thu,\x2
+SF:001-Jan-1970\x2000:00:01\x20GMT;\x20path=/;\x20port=2083;\x20secure\r\n
+SF:Set-Cookie:\x20cpsession=~pre%3a1dCiypkDnunEecx8%2cfaff0803f5c369493d15
+SF:3210aeac184b;\x20HttpOnly;\x20SameSite=Lax;\x20path=/;\x20port=2083;\x2
+SF:0secure\r\nSet-Cookie:\x20roundcube_sessid=expired;\x20HttpOnly;\x20Sam
+SF:eSite=Lax;\x20expires=Thu,\x2001-Jan-1970\x2000:00:01\x20GMT;\x20path=/
+SF:;\x20port=2083;\x20secure\r\nSet-Cookie:\x20roundcube_sessauth=expired;
+SF:\x20HttpOnly;\x20SameSite=Lax;\x20domain=bh-58\.webhostbox\.net;\x20exp
+SF:ires=Thu,\x2001-Jan-1970\x2000:00:01\x20GMT;\x20path=/;\x20port=2083;\x
+SF:20secure\r\nSet-Cookie:\x20PPA_ID=expired;\x20HttpOnly;\x20SameSite=Lax
+SF:;\x20expires=Thu,\x2001-Jan-1970\x2000:00:01\x20GMT;\x20path=/;\x20port
+SF:=2083;\x20secure\r\nCache-Control:\x20no-cache,\x20no-store,\x20must-re
+SF:validate,\x20")%r(HTTPOptions,4000,"HTTP/1\.0\x20200\x20OK\r\nConnectio
+SF:n:\x20close\r\nContent-Type:\x20text/html;\x20charset=\"utf-8\"\r\nDate
+SF::\x20Sat,\x2026\x20Sep\x202026\x2019:14:19\x20GMT\r\nCache-Control:\x20
+SF:no-cache,\x20no-store,\x20must-revalidate,\x20private\r\nPragma:\x20no-
+SF:cache\r\nSet-Cookie:\x20cprelogin=no;\x20HttpOnly;\x20SameSite=Lax;\x20
+SF:expires=Thu,\x2001-Jan-1970\x2000:00:01\x20GMT;\x20path=/;\x20port=2083
+SF:;\x20secure\r\nSet-Cookie:\x20cpsession=~pre%3agHy4EoNPP9eGCL1P%2cbc251
+SF:b02365d2bb08d6db166d9a0b9e8;\x20HttpOnly;\x20SameSite=Lax;\x20path=/;\x
+SF:20port=2083;\x20secure\r\nSet-Cookie:\x20roundcube_sessid=expired;\x20H
+SF:ttpOnly;\x20SameSite=Lax;\x20expires=Thu,\x2001-Jan-1970\x2000:00:01\x2
+SF:0GMT;\x20path=/;\x20port=2083;\x20secure\r\nSet-Cookie:\x20roundcube_se
+SF:ssauth=expired;\x20HttpOnly;\x20SameSite=Lax;\x20domain=bh-58\.webhostb
+SF:ox\.net;\x20expires=Thu,\x2001-Jan-1970\x2000:00:01\x20GMT;\x20path=/;\
+SF:x20port=2083;\x20secure\r\nSet-Cookie:\x20PPA_ID=expired;\x20HttpOnly;\
+SF:x20SameSite=Lax;\x20expires=Thu,\x2001-Jan-1970\x2000:00:01\x20GMT;\x20
+SF:path=/;\x20port=2083;\x20secure\r\nCache-Control:\x20no-cache,\x20no-st
+SF:ore,\x20must-revalidate,\x20");
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port2086-TCP:V=7.99%I=7%D=9/27%Time=6AB819CC%P=x86_64-pc-linux-gnu%r(SI
+SF:POptions,16A0,"HTTP/1\.0\x20200\x20OK\r\nConnection:\x20close\r\nConten
+SF:t-Type:\x20text/html;\x20charset=\"utf-8\"\r\nDate:\x20Sat,\x2026\x20Se
+SF:p\x202026\x2019:15:27\x20GMT\r\nCache-Control:\x20no-cache,\x20no-store
+SF:,\x20must-revalidate,\x20private\r\nPragma:\x20no-cache\r\nSet-Cookie:\
+SF:x20whostmgrrelogin=no;\x20HttpOnly;\x20SameSite=Lax;\x20expires=Thu,\x2
+SF:001-Jan-1970\x2000:00:01\x20GMT;\x20path=/;\x20port=2086\r\nSet-Cookie:
+SF:\x20whostmgrsession=~pre%3adC2MaRpDSILeTvMH%2cce6a84ec48a4b104ef0ae253d
+SF:76006e5;\x20HttpOnly;\x20SameSite=Lax;\x20path=/;\x20port=2086\r\nSet-C
+SF:ookie:\x20roundcube_sessid=expired;\x20HttpOnly;\x20SameSite=Lax;\x20ex
+SF:pires=Thu,\x2001-Jan-1970\x2000:00:01\x20GMT;\x20path=/;\x20port=2086\r
+SF:\nSet-Cookie:\x20roundcube_sessauth=expired;\x20HttpOnly;\x20SameSite=L
+SF:ax;\x20domain=bh-58\.webhostbox\.net;\x20expires=Thu,\x2001-Jan-1970\x2
+SF:000:00:01\x20GMT;\x20path=/;\x20port=2086\r\nSet-Cookie:\x20PPA_ID=expi
+SF:red;\x20HttpOnly;\x20SameSite=Lax;\x20expires=Thu,\x2001-Jan-1970\x2000
+SF::00:01\x20GMT;\x20path=/;\x20port=2086\r\nCache-Control:\x20no-cache,\x
+SF:20no-store,\x20must-revalidate,\x20private\r\nX-Frame-Options:\x20SA");
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port2087-TCP:V=7.99%T=SSL%I=7%D=9/27%Time=6AB81991%P=x86_64-pc-linux-gn
+SF:u%r(RTSPRequest,4000,"HTTP/1\.0\x20200\x20OK\r\nConnection:\x20close\r\
+SF:nContent-Type:\x20text/html;\x20charset=\"utf-8\"\r\nDate:\x20Sat,\x202
+SF:6\x20Sep\x202026\x2019:14:26\x20GMT\r\nCache-Control:\x20no-cache,\x20n
+SF:o-store,\x20must-revalidate,\x20private\r\nPragma:\x20no-cache\r\nSet-C
+SF:ookie:\x20whostmgrrelogin=no;\x20HttpOnly;\x20SameSite=Lax;\x20expires=
+SF:Thu,\x2001-Jan-1970\x2000:00:01\x20GMT;\x20path=/;\x20port=2087;\x20sec
+SF:ure\r\nSet-Cookie:\x20whostmgrsession=~pre%3aBpXCrIR3KqradK89%2cf42ed9b
+SF:f7b22c25d72aad5801abd473e;\x20HttpOnly;\x20SameSite=Lax;\x20path=/;\x20
+SF:port=2087;\x20secure\r\nSet-Cookie:\x20roundcube_sessid=expired;\x20Htt
+SF:pOnly;\x20SameSite=Lax;\x20expires=Thu,\x2001-Jan-1970\x2000:00:01\x20G
+SF:MT;\x20path=/;\x20port=2087;\x20secure\r\nSet-Cookie:\x20roundcube_sess
+SF:auth=expired;\x20HttpOnly;\x20SameSite=Lax;\x20domain=bh-58\.webhostbox
+SF:\.net;\x20expires=Thu,\x2001-Jan-1970\x2000:00:01\x20GMT;\x20path=/;\x2
+SF:0port=2087;\x20secure\r\nSet-Cookie:\x20PPA_ID=expired;\x20HttpOnly;\x2
+SF:0SameSite=Lax;\x20expires=Thu,\x2001-Jan-1970\x2000:00:01\x20GMT;\x20pa
+SF:th=/;\x20port=2087;\x20secure\r\nCache-Control:\x20no-cache,\x20no-stor
+SF:e,\x20must-")%r(SIPOptions,4000,"HTTP/1\.0\x20200\x20OK\r\nConnection:\
+SF:x20close\r\nContent-Type:\x20text/html;\x20charset=\"utf-8\"\r\nDate:\x
+SF:20Sat,\x2026\x20Sep\x202026\x2019:15:49\x20GMT\r\nCache-Control:\x20no-
+SF:cache,\x20no-store,\x20must-revalidate,\x20private\r\nPragma:\x20no-cac
+SF:he\r\nSet-Cookie:\x20whostmgrrelogin=no;\x20HttpOnly;\x20SameSite=Lax;\
+SF:x20expires=Thu,\x2001-Jan-1970\x2000:00:01\x20GMT;\x20path=/;\x20port=2
+SF:087;\x20secure\r\nSet-Cookie:\x20whostmgrsession=~pre%3a8uHNe1ob0Bruux3
+SF:Z%2cf24e14c667b00a9dfa43bb0ab1e10336;\x20HttpOnly;\x20SameSite=Lax;\x20
+SF:path=/;\x20port=2087;\x20secure\r\nSet-Cookie:\x20roundcube_sessid=expi
+SF:red;\x20HttpOnly;\x20SameSite=Lax;\x20expires=Thu,\x2001-Jan-1970\x2000
+SF::00:01\x20GMT;\x20path=/;\x20port=2087;\x20secure\r\nSet-Cookie:\x20rou
+SF:ndcube_sessauth=expired;\x20HttpOnly;\x20SameSite=Lax;\x20domain=bh-58\
+SF:.webhostbox\.net;\x20expires=Thu,\x2001-Jan-1970\x2000:00:01\x20GMT;\x2
+SF:0path=/;\x20port=2087;\x20secure\r\nSet-Cookie:\x20PPA_ID=expired;\x20H
+SF:ttpOnly;\x20SameSite=Lax;\x20expires=Thu,\x2001-Jan-1970\x2000:00:01\x2
+SF:0GMT;\x20path=/;\x20port=2087;\x20secure\r\nCache-Control:\x20no-cache,
+SF:\x20no-store,\x20must-");
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port2095-TCP:V=7.99%I=7%D=9/27%Time=6AB819CD%P=x86_64-pc-linux-gnu%r(SI
+SF:POptions,1C48,"HTTP/1\.0\x20200\x20OK\r\nConnection:\x20close\r\nConten
+SF:t-Type:\x20text/html;\x20charset=\"utf-8\"\r\nDate:\x20Sat,\x2026\x20Se
+SF:p\x202026\x2019:15:27\x20GMT\r\nCache-Control:\x20no-cache,\x20no-store
+SF:,\x20must-revalidate,\x20private\r\nPragma:\x20no-cache\r\nSet-Cookie:\
+SF:x20webmailrelogin=no;\x20HttpOnly;\x20SameSite=Lax;\x20expires=Thu,\x20
+SF:01-Jan-1970\x2000:00:01\x20GMT;\x20path=/;\x20port=2095\r\nSet-Cookie:\
+SF:x20webmailsession=~pre%3aZ3XDgMEuMSqcUWkA%2cc46f4cb7a9b3453bef27d0aada5
+SF:366f2;\x20HttpOnly;\x20SameSite=Lax;\x20path=/;\x20port=2095\r\nSet-Coo
+SF:kie:\x20roundcube_sessid=expired;\x20HttpOnly;\x20SameSite=Lax;\x20expi
+SF:res=Thu,\x2001-Jan-1970\x2000:00:01\x20GMT;\x20path=/;\x20port=2095\r\n
+SF:Set-Cookie:\x20roundcube_sessauth=expired;\x20HttpOnly;\x20SameSite=Lax
+SF:;\x20domain=bh-58\.webhostbox\.net;\x20expires=Thu,\x2001-Jan-1970\x200
+SF:0:00:01\x20GMT;\x20path=/;\x20port=2095\r\nSet-Cookie:\x20PPA_ID=expire
+SF:d;\x20HttpOnly;\x20SameSite=Lax;\x20expires=Thu,\x2001-Jan-1970\x2000:0
+SF:0:01\x20GMT;\x20path=/;\x20port=2095\r\nSet-Cookie:\x20roundcube_cookie
+SF:s=enabled;\x20HttpOnly;\x20SameSite=Lax;\x20expires=Sun,\x2026-Sep");
+Service Info: Host: bh-58.webhostbox.net; OS: Linux; CPE: cpe:/o:redhat:enterprise_linux:7
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 940.55 seconds
