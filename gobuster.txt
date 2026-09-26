@@ -1,0 +1,137 @@
+                                                                                                                                                           
+┌──(root㉿kali)-[/home/kali]
+└─# gobuster dir -u http://sbjit.edu.in -w /usr/share/wordlists/dirb/common.txt -b 301
+===============================================================
+Gobuster v3.8.2
+by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
+===============================================================
+[+] Url:                     http://sbjit.edu.in
+[+] Method:                  GET
+[+] Threads:                 10
+[+] Wordlist:                /usr/share/wordlists/dirb/common.txt
+[+] Negative Status codes:   301
+[+] User Agent:              gobuster/3.8.2
+[+] Timeout:                 10s
+===============================================================
+Starting gobuster in directory enumeration mode
+===============================================================
+.history             (Status: 406) [Size: 226]
+.htaccess            (Status: 403) [Size: 583]
+.bash_history        (Status: 406) [Size: 226]
+.htpasswd            (Status: 403) [Size: 583]
+.sh_history          (Status: 406) [Size: 226]
+bandwidth            (Status: 404) [Size: 583]
+cgi-bin              (Status: 403) [Size: 583]
+cgi-bin/             (Status: 403) [Size: 583]
+controlpanel         (Status: 200) [Size: 33888]
+cpanel               (Status: 200) [Size: 33888]
+error_log            (Status: 403) [Size: 583]
+global.asa           (Status: 406) [Size: 226]
+id_rsa               (Status: 406) [Size: 226]
+java-sys             (Status: 404) [Size: 583]
+main.mdb             (Status: 406) [Size: 226]
+php.ini              (Status: 403) [Size: 583]
+server-info          (Status: 406) [Size: 226]
+server-status        (Status: 200) [Size: 583]
+web.config           (Status: 406) [Size: 226]
+webmail              (Status: 200) [Size: 33893]
+xmlrpc.php           (Status: 405) [Size: 42]
+Progress: 4613 / 4613 (100.00%)
+===============================================================
+Finished
+===============================================================
+                                                                                                                                                           
+┌──(root㉿kali)-[/home/kali]
+└─# gobuster dir -u http://208.91.198.225 -w /usr/share/wordlists/dirb/common.txt -b 302
+===============================================================
+Gobuster v3.8.2
+by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
+===============================================================
+[+] Url:                     http://208.91.198.225
+[+] Method:                  GET
+[+] Threads:                 10
+[+] Wordlist:                /usr/share/wordlists/dirb/common.txt
+[+] Negative Status codes:   302
+[+] User Agent:              gobuster/3.8.2
+[+] Timeout:                 10s
+===============================================================
+Starting gobuster in directory enumeration mode
+===============================================================
+.bash_history        (Status: 406) [Size: 226]
+.history             (Status: 406) [Size: 226]
+.htaccess            (Status: 403) [Size: 583]
+.htpasswd            (Status: 403) [Size: 583]
+.sh_history          (Status: 406) [Size: 226]
+_images              (Status: 404) [Size: 583]
+_js                  (Status: 404) [Size: 583]
+ad_js                (Status: 404) [Size: 583]
+bandwidth            (Status: 404) [Size: 583]
+cgi-sys              (Status: 301) [Size: 278] [--> http://208.91.198.225/cgi-sys/]
+controlpanel         (Status: 301) [Size: 0] [--> https://bh-58.webhostbox.net:2083]
+cpanel               (Status: 301) [Size: 0] [--> https://bh-58.webhostbox.net:2083]
+error_log            (Status: 403) [Size: 583]
+feedback_js          (Status: 404) [Size: 583]
+global.asa           (Status: 406) [Size: 226]
+id_rsa               (Status: 406) [Size: 226]
+images               (Status: 301) [Size: 277] [--> http://208.91.198.225/images/]
+images01             (Status: 404) [Size: 583]
+images1              (Status: 404) [Size: 583]
+images2              (Status: 404) [Size: 583]
+images3              (Status: 404) [Size: 583]
+java-sys             (Status: 404) [Size: 583]
+js                   (Status: 301) [Size: 273] [--> http://208.91.198.225/js/]
+m_images             (Status: 404) [Size: 583]
+mailman              (Status: 301) [Size: 278] [--> http://208.91.198.225/mailman/]
+main.mdb             (Status: 406) [Size: 226]
+mods                 (Status: 403) [Size: 420]
+modules              (Status: 403) [Size: 420]
+mytag_js             (Status: 404) [Size: 583]
+php.ini              (Status: 403) [Size: 583]
+pipermail            (Status: 301) [Size: 280] [--> http://208.91.198.225/pipermail/]
+prodimages           (Status: 404) [Size: 583]
+product_images       (Status: 404) [Size: 583]
+robots.txt           (Status: 200) [Size: 26]
+server-info          (Status: 406) [Size: 226]
+server-status        (Status: 403) [Size: 583]
+siteimages           (Status: 404) [Size: 583]
+style_images         (Status: 404) [Size: 583]
+suspended.page       (Status: 404) [Size: 583]
+swfobject.js         (Status: 404) [Size: 583]
+uploadedimages       (Status: 404) [Size: 583]
+userimages           (Status: 404) [Size: 583]
+web.config           (Status: 406) [Size: 226]
+webmail              (Status: 301) [Size: 0] [--> https://bh-58.webhostbox.net:2096]
+wp-images            (Status: 404) [Size: 583]
+xajax_js             (Status: 404) [Size: 583]
+Progress: 4613 / 4613 (100.00%)
+===============================================================
+Finished
+===============================================================
+
+
+The scan has completed successfully. However, look closely at the results: the target server is heavily spoofing response codes, creating a lot of fake data.
+Because this is a shared cPanel/WebHostBox hosting server, it handles non-existent paths in unusual ways, giving false positives:
+
+* Fake 404 Not Found (Status: 404, Size: 583): Notice how _images, _js, and ad_js show a size of 583 bytes. Normally, Gobuster hides 404s, but because this server returns an active cPanel error page measuring 583 bytes for missing files instead of a standard raw 404 header, Gobuster caught them. You can ignore every single entry that has [Size: 583].
+* Fake 406 Not Acceptable (Status: 406, Size: 226): Files like .bash_history and id_rsa are showing up as 406 with a size of 226 bytes. This is a generic ModSecurity firewall rule blocking the request rather than the file actually existing.
+
+## 🎯 The Actual Real Findings
+Filtering out the noise, here are the real, interesting directories and files found on the server:
+
+   1. robots.txt (Status: 200) [Size: 26]
+   * This is a 100% real file. It is tiny (26 bytes) and likely contains routing restrictions for search engine bots. You should check this in your browser: http://208.91.198.
+   2. controlpanel & cpanel (Status: 301) [Size: 0]
+   * These actively redirect straight to the backend cPanel infrastructure panel: https://bh-58.webhostbox.net:2083.
+   3. webmail (Status: 301) [Size: 0]
+   * Redirects straight to the cPanel webmail login portal on port 2096.
+   4. cgi-sys (Status: 301) [Size: 278]
+   * A standard built-in cPanel system directory used for executing CGI scripts.
+   5. .htaccess & .htpasswd (Status: 403) [Size: 583]
+   * The server explicitly denies access to these files. This strongly implies they exist on the root folder but are protected by Apache rules.
+   
+Would you like to drill down deeper? I can help you:
+
+* Construct a command to automatically filter out the 583-byte fake results using the size hide flag.
+* Look for specific hidden assets by scanning with a dedicated file extension list (like .php, .ini, .bak).
+
+
